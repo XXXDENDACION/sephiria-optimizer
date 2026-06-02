@@ -21,14 +21,21 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[BepInPlugin("com.jeongmok.sephiria.optimizer", "Sephiria Optimizer", "0.1.2")]
+internal static class ModInfo
+{
+    public const string Version = "0.1.3";
+}
+
+[BepInPlugin("com.jeongmok.sephiria.optimizer", "Sephiria Optimizer", ModInfo.Version)]
 public class OptimizerPlugin : BaseUnityPlugin
 {
     private ConfigEntry<Key> _hotkey;              // 최적화 실행 (신형 InputSystem Key)
     private ConfigEntry<Key> _applyKey;            // 자동 적용(선택)
     private ConfigEntry<Key> _collapseKey;         // 오버레이 접기/펼치기
+    private ConfigEntry<Key> _gridKey;             // 격자 디버그 보기 토글
     private static GridInventory _inventory;       // 후킹으로 캐시되는 플레이어 인벤토리
     private bool _collapsed;                        // 오버레이 접힘 상태
+    private bool _gridDebug;                         // 격자 전체 상황 표시
 #if SANDBOX
     private ConfigEntry<Key> _addPanelKey;         // [개발용] 아이템 추가 패널 토글
     private bool _addOpen;                          // 추가 패널 표시 여부
@@ -53,6 +60,7 @@ public class OptimizerPlugin : BaseUnityPlugin
         _hotkey       = Config.Bind("Keys", "Optimize", Key.F8);
         _applyKey     = Config.Bind("Keys", "Apply",    Key.F9);
         _collapseKey  = Config.Bind("Keys", "Collapse", Key.F6);
+        _gridKey      = Config.Bind("Keys", "GridDebug", Key.F5);
 #if SANDBOX
         _addPanelKey  = Config.Bind("Keys", "AddPanel", Key.F7);
 #endif
@@ -97,6 +105,7 @@ public class OptimizerPlugin : BaseUnityPlugin
         if (KeyPressed(_hotkey.Value))   { Logger.LogInfo("Optimize key pressed."); RunOptimize(); }
         if (KeyPressed(_applyKey.Value)) { Logger.LogInfo("Apply key pressed.");    ApplyPlan();   }
         if (KeyPressed(_collapseKey.Value)) { _collapsed = !_collapsed; if (string.IsNullOrEmpty(_status)) _status = "준비됨. F8=최적화"; }
+        if (KeyPressed(_gridKey.Value)) { _gridDebug = !_gridDebug; if (string.IsNullOrEmpty(_status)) _status = "준비됨. F8=최적화"; }
 #if SANDBOX
         if (KeyPressed(_addPanelKey.Value)) { _addOpen = !_addOpen; if (string.IsNullOrEmpty(_status)) _status = "준비됨. F8=최적화"; }
 #endif
@@ -150,8 +159,51 @@ public class OptimizerPlugin : BaseUnityPlugin
             string mys = model.MysticCells.Count > 0 ? $" · 신비x2 {model.MysticCells.Count}칸" : "";
             _status = $"아티팩트 {model.Artifacts.Count}·석판 {model.Tablets.Count}{mys} · 점수 {before:F0}→{after:F0} · 이동 {moves}칸 · {_applyKey.Value}=적용";
             Logger.LogInfo(_status);
+            LogGrid(model);   // 격자 전체 상황을 로그에 덤프 (디버깅/공유용)
         }
         catch (Exception e) { _status = "최적화 실패: " + e.Message; Logger.LogError(e); }
+    }
+
+    // 셀의 점유자 코드: T=석판 A=아티팩트 F=필러 .=빈칸
+    private static string OccAt(InvModel m, (int, int) c)
+    {
+        foreach (var t in m.Tablets) if (t.CurCell.Equals(c)) return "T";
+        foreach (var a in m.Artifacts) if (a.CurCell.Equals(c)) return a.IsFiller ? "F" : "A";
+        return ".";
+    }
+
+    // 셀 효과 코드: 비활성 X, 가산 +N, 곱연산 xN (현재 배치 기준 CurMaps)
+    private static string EffAt(Maps mp, (int, int) c)
+    {
+        if (mp.Dis.Contains(c)) return "X";
+        string s = "";
+        if (mp.Add.TryGetValue(c, out var a) && a != 0) s += (a > 0 ? "+" : "") + a;
+        if (mp.Mul.TryGetValue(c, out var mu) && mu > 0) s += "x" + mu;
+        return s == "" ? "." : s;
+    }
+
+    // 격자 전체 상황을 로그로 덤프 (각 칸 점유자 + 효과). 공유/디버깅용.
+    private void LogGrid(InvModel m)
+    {
+        Logger.LogInfo($"===== GRID DUMP (v{ModInfo.Version})  {m.Rows} rows x {m.Cols} cols  storage={m.Storage} =====");
+        Logger.LogInfo("기호: T=석판 A=아티팩트 F=필러(포션 등) .=빈칸 | 효과: +N가산 xN곱 X비활성 (현재 배치 기준)");
+        for (int y = 0; y < m.Rows; y++)
+        {
+            var sb = new System.Text.StringBuilder($" r{y}|");
+            for (int x = 0; x < m.Cols; x++)
+            {
+                var c = (y, x);
+                string tok = OccAt(m, c) + EffAt(m.CurMaps, c) + (m.MysticCells.Contains(c) ? "신" : "");
+                sb.Append(" " + tok.PadRight(7));
+            }
+            Logger.LogInfo(sb.ToString());
+        }
+        // 점유 아이템 상세 (이름·레벨·태그)
+        foreach (var a in m.Artifacts)
+            Logger.LogInfo($"  ({a.CurCell.Item1},{a.CurCell.Item2}) {(a.IsFiller ? "[필러]" : "")}{a.Name} E{a.Enchant}/별{a.MaxLevel} 현재Lv{GameBridge.EffLevel(a, a.CurCell, m.CurMaps)} tags=[{string.Join(",", a.Tags)}]");
+        foreach (var t in m.Tablets)
+            Logger.LogInfo($"  ({t.CurCell.Item1},{t.CurCell.Item2}) [석판]{t.Name}");
+        Logger.LogInfo("===== END GRID DUMP =====");
     }
 
     private void ApplyPlan()
@@ -212,7 +264,7 @@ public class OptimizerPlugin : BaseUnityPlugin
             GUI.DrawTexture(new Rect(X - 6, 6, W + 12, 30), _bg, ScaleMode.StretchToFill);
             if (GUI.Button(new Rect(X, 10, 26, 22), "▶", _btn)) _collapsed = false;
             GUI.Label(new Rect(X + 32, 12, W - 32, 22),
-                "<b>[Optimizer]</b> 접힘 — F6/▶ 펼치기", _header);
+                $"<b>[Optimizer v{ModInfo.Version}]</b> 접힘 — F6/▶ 펼치기", _header);
             return;
         }
 
@@ -225,12 +277,12 @@ public class OptimizerPlugin : BaseUnityPlugin
 
         float y = 12f;
         if (GUI.Button(new Rect(X, y, 26, 22), "▼", _btn)) { _collapsed = true; return; }
-        GUI.Label(new Rect(X + 32, y, W - 32, 22), "<b>[Sephiria Optimizer]</b>  " + _status, _header); y += 26;
+        GUI.Label(new Rect(X + 32, y, W - 32, 22), $"<b>[Sephiria Optimizer v{ModInfo.Version}]</b>  " + _status, _header); y += 26;
         GUI.Label(new Rect(X, y, W, 20),
 #if SANDBOX
-            "F6=접기 F7=추가 F8=최적화 " + _applyKey.Value + "=적용 · [우선N]=우선순위1~5 · 포션=필러 · [X]=삭제", _label); y += 24;
+            "F5=격자 F6=접기 F7=추가 F8=최적화 " + _applyKey.Value + "=적용 · [우선N] · 포션=필러 · [X]=삭제", _label); y += 24;
 #else
-            "F6=접기 F8=최적화 " + _applyKey.Value + "=적용 · [우선N]클릭=우선순위1~5 · 포션=필러(최하위)", _label); y += 24;
+            "F5=격자 F6=접기 F8=최적화 " + _applyKey.Value + "=적용 · [우선N]클릭=우선순위1~5 · 포션=필러(최하위)", _label); y += 24;
 #endif
         GUI.Label(new Rect(X, y, W, 20), "── 아티팩트: (현재셀)Lv → (추천셀)Lv ──", _label); y += 22;
 
@@ -305,9 +357,32 @@ public class OptimizerPlugin : BaseUnityPlugin
             }
         }
 
+        if (_gridDebug && _model != null) DrawGrid(_model);
 #if SANDBOX
         if (_addOpen) DrawAddPanel();
 #endif
+    }
+
+    // 격자 전체 상황 시각화 (F5). 각 칸: 점유자 + 효과(현재 배치 기준).
+    private void DrawGrid(InvModel m)
+    {
+        const float gx = 624f, gy = 6f, cw = 56f, ch = 40f;
+        float pw = m.Cols * cw + 16, ph = m.Rows * ch + 48;
+        GUI.DrawTexture(new Rect(gx - 6, gy, pw + 12, ph), _bg, ScaleMode.StretchToFill);
+        GUI.Label(new Rect(gx, gy + 4, pw, 20), "<b>격자 상황</b> (T석판 A부적 F필러 / +가산 x곱 X비활성 신=신비)", _label);
+        for (int y = 0; y < m.Rows; y++)
+            for (int x = 0; x < m.Cols; x++)
+            {
+                var c = (y, x);
+                string occ = OccAt(m, c);
+                string eff = EffAt(m.CurMaps, c);
+                bool myst = m.MysticCells.Contains(c);
+                string col = occ == "T" ? "#9c9" : occ == "A" ? "#9bd" : occ == "F" ? "#bbb" : "#666";
+                string e2 = eff == "." ? "" : $"\n<color=#ff5>{eff}</color>";
+                string mk = myst ? "<color=#d9f>신</color>" : "";
+                GUI.Label(new Rect(gx + x * cw, gy + 28 + y * ch, cw, ch),
+                    $"<color={col}>{occ}{mk}</color>{e2}", _label);
+            }
     }
 
 #if SANDBOX
