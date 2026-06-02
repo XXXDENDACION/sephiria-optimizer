@@ -1,76 +1,79 @@
-# Sephiria Optimizer (세피리아 인벤토리 최적 배치 모드)
+# 세피리아 인벤토리 최적 배치 모드 (Sephiria Optimizer)
 
-세피리아(Sephiria) 인벤토리의 아티팩트·석판 배치를 자동으로 최적화해 주는 BepInEx 모드입니다.
-게임 내부 데이터를 읽어 **석판 효과·발동 제약·신비 콤보(×2)**를 모두 반영해 최적 배치를 추천하고,
-정식 이동(Swap) 경로로 자동 적용합니다. (멀티 동기화 보존)
+세피리아에서 **가방 속 아티팩트·석판을 어디에 놓아야 가장 강한지** 자동으로 계산해 정리해 주는 모드입니다.
+가방을 열고 **F8**(추천) → **F9**(자동 정리), 이게 전부입니다.
 
 ---
 
-## 설치 방법
+## 설치 방법 (둘 중 하나 선택)
 
-### 방법 A — 통합 설치본 (권장, 가장 쉬움)
-1. 이 zip을 받아 압축을 풉니다.
-2. 안에 있는 파일/폴더(`winhttp.dll`, `doorstop_config.ini`, `BepInEx\` 등)를
-   **게임 설치 폴더**에 **그대로 복사**합니다.
-   - 기본 경로: `C:\Program Files (x86)\Steam\steamapps\common\Sephiria`
-   - Steam → 세피리아 우클릭 → 관리 → 로컬 파일 보기 로 폴더를 열 수 있습니다.
-3. 게임을 한 번 실행했다 종료한 뒤, `BepInEx\LogOutput.log`에
-   `Sephiria Optimizer loaded.` 가 보이면 설치 성공입니다.
+### 방법 A — 통합 설치본 (초보자 추천, 가장 쉬움)
+`SephiriaOptimizer_..._full-install.zip` 을 받았다면:
 
-### 방법 B — 이미 BepInEx 5가 깔려 있는 경우
-1. `SephiriaOptimizer.dll` 한 개만 받아
-2. 게임의 `BepInEx\plugins\` 폴더에 넣습니다.
+1. **게임 폴더 열기**
+   - Steam → 라이브러리 → **Sephiria 우클릭 → 관리 → 로컬 파일 보기**
+   - 보통 경로: `C:\Program Files (x86)\Steam\steamapps\common\Sephiria`
+   - 폴더 안에 `Sephiria.exe` 가 보이면 맞습니다.
+2. **zip 압축 해제** → 나오는 파일들:
+   ```
+   winhttp.dll
+   doorstop_config.ini
+   .doorstop_version
+   BepInEx\   (폴더)
+   README.md
+   ```
+3. 이 **전부를 게임 폴더에 그대로 복사**합니다.
+   → `Sephiria.exe` 옆에 `winhttp.dll` 과 `BepInEx` 폴더가 나란히 있으면 성공.
+
+### 방법 B — 이미 BepInEx 5가 깔린 경우
+`SephiriaOptimizer_..._plugin-only.zip` 안의 **`SephiriaOptimizer.dll`** 만
+게임의 `BepInEx\plugins\` 폴더에 넣으면 됩니다.
 
 > BepInEx는 **BepInEx 5 (x64, Mono)** 버전이 필요합니다.
 
 ---
 
-## 사용법 (단축키)
+## 설치 확인
+
+1. 게임을 **한 번 실행했다 종료**합니다.
+2. 게임 폴더의 `BepInEx\LogOutput.log` 를 메모장으로 엽니다.
+3. `Sephiria Optimizer loaded.` 가 보이면 **설치 완료**입니다.
+
+---
+
+## 사용법 (가방을 연 상태에서)
 
 | 키 | 기능 |
 |----|------|
-| **F8** | 현재 인벤토리 분석 → 최적 배치 추천 (오버레이 표시) |
-| **F9** | 추천 배치대로 자동 적용 (석판·아티팩트 이동) |
-| **F6** | 오버레이 접기/펼치기 |
+| **F8** | 최적 배치 **추천** (화면 왼쪽 위 표시) |
+| **F9** | 추천대로 **자동 정리** |
+| **F6** | 추천 화면 **접기 / 펼치기** |
 
-오버레이 내 버튼:
-- **[우선N]** : 클릭할 때마다 우선순위 순환(없음→1→…→5). 높을수록 좋은 칸(석판·신비)을 먼저 차지
-- **[필러]** : 포션 등은 자동으로 최하위 처리되어 좋은 칸을 피해 배치됩니다
+- **[우선N]** 버튼: 클릭마다 우선순위 `없음→1→…→5` 순환. 높을수록 좋은 칸(석판·신비) 우선.
+- **[필러]**: 포션 등 소비템은 자동으로 최하위 처리되어 좋은 칸을 피해 배치됩니다.
 
-단축키는 `BepInEx\config\com.jeongmok.sephiria.optimizer.cfg` 에서 변경할 수 있습니다.
-
----
-
-## 동작 원리 (요약)
-
-- 인벤토리의 아티팩트/석판을 게임 데이터에서 직접 읽습니다 (호버 불필요).
-- 석판 효과 영역을 게임의 `ParseQuery`로 위치별 계산 → 석판도 이동 대상에 포함.
-- 아티팩트 실효 레벨 = `clamp((인챈트 + 석판가산) × 곱연산, 0, 별상한)`,
-  발동 제약(가장 아래/바깥/안쪽 등)과 신비 콤보 ×2 칸을 반영.
-- 모의담금질로 "총 활성 레벨 + 콤보"가 최대가 되는 배치를 탐색.
-- 적용은 게임 정식 `Swap`(네트워크 동기화)만 사용 — 메모리 직접 수정 없음.
+> 단축키 변경: `BepInEx\config\com.jeongmok.sephiria.optimizer.cfg`
 
 ---
 
-## 주의사항
+## 자주 묻는 질문
 
-- **게임 버전 의존성**: 이 모드는 특정 게임 빌드의 내부 구조에 맞춰져 있습니다.
-  게임이 크게 업데이트되면 동작이 깨질 수 있으며, 그때는 모드 업데이트가 필요합니다.
-- F9는 실제 게임 상태를 변경합니다(게임의 정식 이동 경로 사용). 중요한 상황에서는 신중히 사용하세요.
-- 배포본에는 아이템 추가/삭제 같은 게임 상태 조작(치트) 기능이 포함되어 있지 않습니다.
-
----
-
-## 제거 방법
-
-- `BepInEx\plugins\SephiriaOptimizer.dll` 삭제 (모드만 제거)
-- BepInEx까지 제거하려면 게임 폴더의 `winhttp.dll`, `doorstop_config.ini`,
-  `.doorstop_version`, `BepInEx\` 폴더를 삭제.
+- **F8 무반응** → 가방을 먼저 열었는지, `LogOutput.log` 에 `Sephiria Optimizer loaded.` 가 있는지 확인.
+- **BepInEx 폴더가 안 생김** → `winhttp.dll` 이 `Sephiria.exe` 와 같은 폴더에 있는지 확인.
+- **업데이트 후 작동 안 함** → 게임 대규모 업데이트 시 멈출 수 있음. 모드 새 버전을 기다려 주세요.
 
 ---
 
-## 라이선스 / 고지
+## 제거
 
-- 본 모드 코드는 자유롭게 사용/수정 가능합니다.
-- BepInEx는 해당 프로젝트의 라이선스를 따릅니다 (https://github.com/BepInEx/BepInEx).
-- 세피리아 게임의 어떤 파일도 본 배포물에 포함되어 있지 않습니다.
+- 모드만 끄기: `BepInEx\plugins\SephiriaOptimizer.dll` 삭제
+- 완전 제거: `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version`, `BepInEx\` 삭제
+
+---
+
+## 주의
+
+- 특정 게임 버전 기준입니다. 게임 업데이트 시 동작이 깨질 수 있습니다.
+- F9는 게임 상태를 실제로 바꿉니다(게임 정식 이동 경로 사용).
+- 이 배포본에는 치트성 기능(아이템 추가/삭제)이 포함되어 있지 않습니다.
+- 게임 파일은 본 배포물에 포함되어 있지 않습니다. BepInEx는 해당 프로젝트 라이선스를 따릅니다.
