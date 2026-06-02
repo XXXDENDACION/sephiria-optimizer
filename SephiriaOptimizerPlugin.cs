@@ -26,18 +26,20 @@ public class OptimizerPlugin : BaseUnityPlugin
 {
     private ConfigEntry<Key> _hotkey;              // 최적화 실행 (신형 InputSystem Key)
     private ConfigEntry<Key> _applyKey;            // 자동 적용(선택)
-    private ConfigEntry<Key> _addPanelKey;         // 아이템 추가 패널 토글
     private ConfigEntry<Key> _collapseKey;         // 오버레이 접기/펼치기
     private static GridInventory _inventory;       // 후킹으로 캐시되는 플레이어 인벤토리
     private bool _collapsed;                        // 오버레이 접힘 상태
+#if SANDBOX
+    private ConfigEntry<Key> _addPanelKey;         // [개발용] 아이템 추가 패널 토글
     private bool _addOpen;                          // 추가 패널 표시 여부
     private string _filter = "";                    // 추가 패널 이름 필터
     private Vector2 _scroll;                         // 추가 패널 스크롤
     private int _typeFilter;                         // 0=전체 1=부적 2=석판
     private bool _groupByCombo;                      // 콤보별 모아보기
+#endif
     private Dictionary<int, (int, int)> _target = new(); // instanceID → 목표 셀(row,col)
     private InvModel _model;                              // 마지막 F8 모델 (오버레이/버튼용)
-    private readonly HashSet<int> _pinned = new();        // 사용자가 고정한 instanceID
+    private readonly Dictionary<int, int> _priority = new(); // instanceID → 우선순위(1~5)
     private string _status = "";
 
     private Texture2D _bg;
@@ -50,10 +52,16 @@ public class OptimizerPlugin : BaseUnityPlugin
         Logger    = base.Logger;
         _hotkey       = Config.Bind("Keys", "Optimize", Key.F8);
         _applyKey     = Config.Bind("Keys", "Apply",    Key.F9);
-        _addPanelKey  = Config.Bind("Keys", "AddPanel", Key.F7);
         _collapseKey  = Config.Bind("Keys", "Collapse", Key.F6);
+#if SANDBOX
+        _addPanelKey  = Config.Bind("Keys", "AddPanel", Key.F7);
+#endif
         new Harmony("com.jeongmok.sephiria.optimizer").PatchAll();
+#if SANDBOX
+        Logger.LogInfo("Sephiria Optimizer loaded. [SANDBOX/DEV build]");
+#else
         Logger.LogInfo("Sephiria Optimizer loaded.");
+#endif
     }
 
     // 신형 Input System으로 키 입력 감지 (이 게임은 레거시 UnityEngine.Input 비활성).
@@ -88,8 +96,10 @@ public class OptimizerPlugin : BaseUnityPlugin
         // F8/F9/F7 는 항상 폴링한다.
         if (KeyPressed(_hotkey.Value))   { Logger.LogInfo("Optimize key pressed."); RunOptimize(); }
         if (KeyPressed(_applyKey.Value)) { Logger.LogInfo("Apply key pressed.");    ApplyPlan();   }
-        if (KeyPressed(_addPanelKey.Value)) { _addOpen = !_addOpen; if (string.IsNullOrEmpty(_status)) _status = "준비됨. F8=최적화"; }
         if (KeyPressed(_collapseKey.Value)) { _collapsed = !_collapsed; if (string.IsNullOrEmpty(_status)) _status = "준비됨. F8=최적화"; }
+#if SANDBOX
+        if (KeyPressed(_addPanelKey.Value)) { _addOpen = !_addOpen; if (string.IsNullOrEmpty(_status)) _status = "준비됨. F8=최적화"; }
+#endif
     }
 
     /// 캐시가 없으면 로컬 플레이어의 GridInventory 를 직접 탐색한다.
@@ -120,9 +130,9 @@ public class OptimizerPlugin : BaseUnityPlugin
             }
 
             var model = GameBridge.BuildModel(inv);
-            model.Pinned = _pinned;                      // 사용자 고정 반영
+            model.Priority = _priority;                  // 사용자 우선순위 반영
             _model = model;
-            Logger.LogInfo($"Model: grid {model.Rows}x{model.Cols}, artifacts {model.Artifacts.Count}, tablets {model.Tablets.Count}, cells {model.AllCells.Count}, pinned {_pinned.Count}");
+            Logger.LogInfo($"Model: grid {model.Rows}x{model.Cols}, artifacts {model.Artifacts.Count}, tablets {model.Tablets.Count}, cells {model.AllCells.Count}, prioritized {_priority.Count}");
 
             if (model.Artifacts.Count == 0)
             {
@@ -217,7 +227,11 @@ public class OptimizerPlugin : BaseUnityPlugin
         if (GUI.Button(new Rect(X, y, 26, 22), "▼", _btn)) { _collapsed = true; return; }
         GUI.Label(new Rect(X + 32, y, W - 32, 22), "<b>[Sephiria Optimizer]</b>  " + _status, _header); y += 26;
         GUI.Label(new Rect(X, y, W, 20),
-            "F6=접기  F7=추가  F8=최적화  " + _applyKey.Value + "=적용   ·   [고정]=최대화  [X]=삭제", _label); y += 24;
+#if SANDBOX
+            "F6=접기 F7=추가 F8=최적화 " + _applyKey.Value + "=적용 · [우선N]=우선순위1~5 · 포션=필러 · [X]=삭제", _label); y += 24;
+#else
+            "F6=접기 F8=최적화 " + _applyKey.Value + "=적용 · [우선N]클릭=우선순위1~5 · 포션=필러(최하위)", _label); y += 24;
+#endif
         GUI.Label(new Rect(X, y, W, 20), "── 아티팩트: (현재셀)Lv → (추천셀)Lv ──", _label); y += 22;
 
         string Lv(bool act, int lv) => act ? $"<color=#9f9>Lv{lv}</color>" : $"<color=#f88>Lv{lv}·비활성</color>";
@@ -226,18 +240,26 @@ public class OptimizerPlugin : BaseUnityPlugin
         {
             foreach (var a in _model.Artifacts)
             {
-                bool pinned = _pinned.Contains(a.InstanceID);
-                if (GUI.Button(new Rect(X, y, 60, rowH - 6), pinned ? "★고정" : "고정", pinned ? _btnOn : _btn))
+                // 우선순위 버튼: 클릭마다 0→1→2→3→4→5→0 (필러는 우선순위 비활성)
+                int pr = _priority.TryGetValue(a.InstanceID, out var pv) ? pv : 0;
+                string prLabel = a.IsFiller ? "필러" : (pr == 0 ? "우선-" : $"우선{pr}");
+                if (GUI.Button(new Rect(X, y, 60, rowH - 6), prLabel, (pr > 0 && !a.IsFiller) ? _btnOn : _btn))
                 {
-                    if (pinned) _pinned.Remove(a.InstanceID); else _pinned.Add(a.InstanceID);
-                    RunOptimize();
+                    if (!a.IsFiller)
+                    {
+                        int np = (pr + 1) % 6;
+                        if (np == 0) _priority.Remove(a.InstanceID); else _priority[a.InstanceID] = np;
+                        RunOptimize();
+                    }
                 }
+#if SANDBOX
                 if (GUI.Button(new Rect(X + 62, y, 28, rowH - 6), "X", _btn))
                 {
                     var inv = FindInventory();
-                    if (inv != null) { GameBridge.RemoveAt(inv, a.CurCell); _pinned.Remove(a.InstanceID); RunOptimize(); }
+                    if (inv != null) { GameBridge.RemoveAt(inv, a.CurCell); _priority.Remove(a.InstanceID); RunOptimize(); }
                     return;
                 }
+#endif
 
                 int curLv = GameBridge.EffLevel(a, a.CurCell, _model.CurMaps);
                 bool curAct = GameBridge.IsActive(a, a.CurCell, _model.CurMaps, _model);
@@ -249,22 +271,32 @@ public class OptimizerPlugin : BaseUnityPlugin
                 string arrow = (!dst.Equals(a.CurCell)) ? "<color=#ff5>→</color>" : "=";
                 string myst = _model.MysticCells.Contains(dst) ? " <color=#d9f>★신비x2</color>" : "";
 
-                GUI.Label(new Rect(X + 98, y, W - 98, 20),
-                    $"<b>{a.Name}</b> <color=#aaa>(E{a.Enchant}/별{a.MaxLevel})</color>{tagStr}{crit}", _label);
-                GUI.Label(new Rect(X + 98, y + 19, W - 98, 20),
-                    $"    ({a.CurCell.Item1},{a.CurCell.Item2}) {Lv(curAct, curLv)}  {arrow}  ({dst.Item1},{dst.Item2}) {Lv(dstAct, dstLv)}{myst}", _label);
+                if (a.IsFiller)
+                {
+                    GUI.Label(new Rect(X + 98, y + 9, W - 98, 20),
+                        $"<color=#bbb>[필러] {a.Name}   ({a.CurCell.Item1},{a.CurCell.Item2}) {arrow} ({dst.Item1},{dst.Item2})</color>", _label);
+                }
+                else
+                {
+                    GUI.Label(new Rect(X + 98, y, W - 98, 20),
+                        $"<b>{a.Name}</b> <color=#aaa>(E{a.Enchant}/별{a.MaxLevel})</color>{tagStr}{crit}", _label);
+                    GUI.Label(new Rect(X + 98, y + 19, W - 98, 20),
+                        $"    ({a.CurCell.Item1},{a.CurCell.Item2}) {Lv(curAct, curLv)}  {arrow}  ({dst.Item1},{dst.Item2}) {Lv(dstAct, dstLv)}{myst}", _label);
+                }
                 y += rowH;
             }
 
             if (nT > 0) { GUI.Label(new Rect(X, y, W, 20), "── 석판: (현재셀) → (추천셀) ──", _label); y += 22; }
             foreach (var tb in _model.Tablets)
             {
+#if SANDBOX
                 if (GUI.Button(new Rect(X, y, 60, rowH - 6), "X", _btn))
                 {
                     var inv = FindInventory();
                     if (inv != null) { GameBridge.RemoveAt(inv, tb.CurCell); RunOptimize(); }
                     return;
                 }
+#endif
                 var dst = _target.TryGetValue(tb.InstanceID, out var t) ? t : tb.CurCell;
                 string arrow = (!dst.Equals(tb.CurCell)) ? "<color=#ff5>→</color>" : "=";
                 GUI.Label(new Rect(X + 98, y + 9, W - 98, 20),
@@ -273,10 +305,13 @@ public class OptimizerPlugin : BaseUnityPlugin
             }
         }
 
+#if SANDBOX
         if (_addOpen) DrawAddPanel();
+#endif
     }
 
-    // 아이템 추가 패널 (F7 토글): 타입 필터 + 콤보별 모아보기 + 이름 검색.
+#if SANDBOX
+    // 아이템 추가 패널 (F7 토글): 타입 필터 + 콤보별 모아보기 + 이름 검색. [개발용 빌드 전용]
     private void DrawAddPanel()
     {
         const float px = 624f, py = 6f, pw = 400f, ph = 600f;
@@ -353,6 +388,7 @@ public class OptimizerPlugin : BaseUnityPlugin
         GUILayout.Label($"{ty} <b>{GameBridge.SafeName(e)}</b> <color=#888>#{e.id}</color>", _label);
         GUILayout.EndHorizontal();
     }
+#endif
 }
 
 
@@ -378,6 +414,7 @@ public class ArtifactInfo
     public int MaxLevel;         // 별(상한)
     public string[] Tags;
     public bool IsAttack;
+    public bool IsFiller;             // 포션/소비템 등 비(非)아티팩트 → 최하위, 좋은 칸 회피
     public NewItemOwnInstance Item;   // 제약 판정용
     public Charm_Basic Charm;         // 발동 제약(criteria) 보유 (null 가능)
 }
@@ -409,9 +446,11 @@ public class InvModel
     public List<(int, int)> AllCells = new();            // 배치 가능한 모든 셀 (storage 내)
     public List<(int, int)> MysticCells = new();         // 신비 콤보: 레벨 효율 ×2 칸 (게임이 무작위 고정)
     public const int MysticMul = 2;                      // 신비 효율 배수
+    // 고정 베이스 효과 (신비 + 인벤토리 각인): (cell, type, param)
+    public List<((int, int) cell, StoneTablet.EffectType type, int param)> BaseEffects = new();
     // (instanceID, cell) → 발동 제약 만족 여부 (현재 레이아웃 기준 사전 계산)
     public Dictionary<(int, (int, int)), bool> CriteriaOk = new();
-    public HashSet<int> Pinned = new();                  // 사용자가 1순위로 고정한 instanceID
+    public Dictionary<int, int> Priority = new();        // instanceID → 우선순위(1~5, 없으면 미포함)
     public Maps CurMaps = new();                         // 현재 배치의 효과맵 (표시용)
     public Maps TgtMaps = new();                         // 추천 배치의 효과맵 (표시용)
 }
@@ -443,7 +482,30 @@ public static class GameBridge
 
         // 1b) 신비 콤보 ×2 칸 (게임이 무작위 고정 — 그대로 읽어 반영)
         try { foreach (var mp in inv.mysticPositions) m.MysticCells.Add((mp.y, mp.x)); } catch { }
+        foreach (var mc in m.MysticCells)
+            m.BaseEffects.Add((mc, StoneTablet.EffectType.MultiplyConstLevel, InvModel.MysticMul));
         if (m.MysticCells.Count > 0) log?.LogInfo($"  [mystic] x{InvModel.MysticMul} cells: {string.Join(" ", m.MysticCells.Select(c => $"({c.Item1},{c.Item2})"))}");
+
+        // 1c) 인벤토리 각인(engraving) — 영구 각인된 석판 효과를 고정 베이스로 반영
+        int engN = 0;
+        try
+        {
+            foreach (var eng in inv.engravings)
+            {
+                if (eng == null) continue;
+                engN++;
+                foreach (var ed in eng.EffectRange)
+                {
+                    int ex = ed.position.x, ey = ed.position.y;
+                    if (ex < 0 || ex >= cols || ey < 0 || ey >= rows) continue;
+                    if (inv.PosToIdx((sbyte)ex, (sbyte)ey) >= storage) continue;
+                    if (ed.effectType == StoneTablet.EffectType.None) continue;
+                    m.BaseEffects.Add(((ey, ex), ed.effectType, ed.levelParam));
+                }
+            }
+        }
+        catch { }
+        if (engN > 0) log?.LogInfo($"  [engraving] {engN} engraved tablet(s) folded into base effects");
 
         // 2) 석판 수집 + 후보 위치별 효과영역 사전 계산 (ParseQuery, 현재 회전 고정)
         foreach (var item in inv.inventoryMatrix.Values)
@@ -484,7 +546,8 @@ public static class GameBridge
             if (isTablet) continue;
             var cell = (pos.y, pos.x);
 
-            int enchant = ReadEnchant(inv, item, cell, m.CurMaps);
+            bool isFiller = entity.type != EItemType.Charm;   // 포션/음식/스크롤/기타 = 필러(최하위)
+            int enchant = isFiller ? 0 : ReadEnchant(inv, item, cell, m.CurMaps);
             int maxLv = TryDict(inv.maxLevelMatrix, pos, -1);
             if (maxLv < 0) maxLv = item.Charm != null ? item.Charm.maxLevel : 5;
 
@@ -495,8 +558,9 @@ public static class GameBridge
                 CurCell    = cell,
                 Enchant    = enchant,
                 MaxLevel   = maxLv,
-                Tags       = (entity.categories ?? new List<string>()).ToArray(),
+                Tags       = isFiller ? new string[0] : (entity.categories ?? new List<string>()).ToArray(),
                 IsAttack   = item.Charm != null && item.Charm.isWeaponRelatedCharm,
+                IsFiller   = isFiller,
                 Item       = item,
                 Charm      = item.Charm,
             });
@@ -548,9 +612,19 @@ public static class GameBridge
     public static Maps BuildMaps(InvModel m, IEnumerable<(TabletInfo t, (int, int) cell)> placement)
     {
         var mp = new Maps();
-        // 신비 콤보: 고정된 ×2 칸을 곱연산에 먼저 반영 (multiplyLevelMatrix 와 동일하게 param 합산)
-        foreach (var mc in m.MysticCells)
-            mp.Mul[mc] = (mp.Mul.TryGetValue(mc, out var v) ? v : 0) + InvModel.MysticMul;
+        // 고정 베이스 효과(신비 ×2 + 인벤토리 각인)를 먼저 반영
+        foreach (var (cell, type, param) in m.BaseEffects)
+        {
+            switch (type)
+            {
+                case StoneTablet.EffectType.IncreaseConstLevel:
+                    mp.Add[cell] = (mp.Add.TryGetValue(cell, out var a0) ? a0 : 0) + param; break;
+                case StoneTablet.EffectType.MultiplyConstLevel:
+                    mp.Mul[cell] = (mp.Mul.TryGetValue(cell, out var m0) ? m0 : 0) + param; break;
+                case StoneTablet.EffectType.Disable:
+                    mp.Dis.Add(cell); break;
+            }
+        }
         foreach (var (t, cell) in placement)
         {
             if (t.EffectByCell.TryGetValue(cell, out var effs))
@@ -630,13 +704,21 @@ public static class GameBridge
         return ComputeCriteria(a, c, m.Inv);
     }
 
-    private const double PIN_WEIGHT = 100.0; // 고정 아이템 우선순위 가중치
+    /// 우선순위(1~5) → 가중치. 높을수록 좋은 칸을 강하게 선점. 0(없음)=1배.
+    public static double PriorityWeight(int p) => p <= 0 ? 1.0 : Math.Pow(8.0, p); // 8,64,512,4096,32768
+
+    /// 셀 품질(석판/신비 보너스 크기). 필러가 좋은 칸을 피하도록 페널티 계산에 사용.
+    private static double CellQuality((int, int) c, Maps mp)
+    {
+        int add = mp.Add.TryGetValue(c, out var a) ? a : 0;
+        int mul = mp.Mul.TryGetValue(c, out var mm) ? mm : 0;
+        return add + mul * 3.0;
+    }
 
     // 결합 배치(아티팩트+석판) 점수. asg: 엔티티 인덱스(0..nA-1 아티팩트, nA.. 석판) → 셀 인덱스.
     private static double Score(int[] asg, List<(int, int)> cells, InvModel m)
     {
         int nA = m.Artifacts.Count;
-        // 석판 배치로 효과맵 생성
         var place = new List<(TabletInfo, (int, int))>(m.Tablets.Count);
         for (int i = 0; i < m.Tablets.Count; i++)
             place.Add((m.Tablets[i], cells[asg[nA + i]]));
@@ -648,11 +730,17 @@ public static class GameBridge
         {
             var a = m.Artifacts[i];
             var c = cells[asg[i]];
+
+            if (a.IsFiller)
+            {
+                // 필러(포션 등): 좋은 칸 점유 시 페널티 → 평범한 칸으로 밀려남. 콤보 미집계.
+                total -= 0.5 * CellQuality(c, mp);
+                continue;
+            }
             if (!IsActive(a, c, mp, m)) continue;          // 비활성: 기여 없음
-            if (m.Pinned.Contains(a.InstanceID))
-                total += PIN_WEIGHT * (1.0 + RawLevel(a, c, mp)); // 고정: 오버 허용 최대화
-            else
-                total += 1.0 + EffLevel(a, c, mp);
+
+            int p = m.Priority.TryGetValue(a.InstanceID, out var pr) ? pr : 0;
+            total += PriorityWeight(p) * (1.0 + EffLevel(a, c, mp));
             foreach (var t in a.Tags) tagCount[t] = tagCount.GetValueOrDefault(t) + 1;
         }
         foreach (var kv in tagCount)
@@ -767,7 +855,9 @@ public static class GameBridge
     public static void MoveItem(GridInventory inv, (int, int) from, (int, int) to)
         => inv.Swap((sbyte)from.Item2, (sbyte)from.Item1, (sbyte)to.Item2, (sbyte)to.Item1);
 
-    // ── 테스트용 아이템 추가/삭제 (정식 API, 호스트/싱글 기준) ──
+#if SANDBOX
+    // ── [개발용 빌드 전용] 아이템 추가/삭제 (정식 API, 호스트/싱글 기준) ──
+    // 배포(릴리스) 빌드에는 SANDBOX 미정의 → 이 블록 전체가 컴파일에서 제외됨.
 
     /// 모든 아티팩트(Charm) 목록 (이름순). 한 번만 로드 후 캐시.
     private static ItemEntity[] _allCharms;
@@ -826,6 +916,7 @@ public static class GameBridge
         using (new GridInventory.Permission(inv))
             inv.ForceRemoveItem((sbyte)cell.Item2, (sbyte)cell.Item1);
     }
+#endif
 }
 
 

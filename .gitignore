@@ -16,8 +16,9 @@ BepInEx_win_x64_*.zip
 dotnet-sdk-*.exe
 
 # ───────────── 릴리스 산출물 (Releases 에 업로드) ─────────────
-dist/stage_*/
-dist/*.zip
+# dist 폴더는 README.md 만 추적, 나머지(zip·임시 스테이징 폴더)는 제외
+dist/*
+!dist/README.md
 
 # ───────────── 에디터 / OS ─────────────
 .vs/

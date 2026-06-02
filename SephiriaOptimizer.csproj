@@ -8,6 +8,9 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <!-- 프로젝트 루트의 .cs 파일만 컴파일 (decompiled\ 등은 제외) -->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- 개발용 빌드: dotnet build -p:Sandbox=true → 아이템 추가/삭제 기능 포함
+         배포용 빌드: dotnet build (Sandbox 미지정) → 추가/삭제 코드 자체가 제외됨 -->
+    <DefineConstants Condition="'$(Sandbox)'=='true'">$(DefineConstants);SANDBOX</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
