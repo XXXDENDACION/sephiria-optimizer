@@ -21,7 +21,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[BepInPlugin("com.jeongmok.sephiria.optimizer", "Sephiria Optimizer", "0.1.0")]
+[BepInPlugin("com.jeongmok.sephiria.optimizer", "Sephiria Optimizer", "0.1.1")]
 public class OptimizerPlugin : BaseUnityPlugin
 {
     private ConfigEntry<Key> _hotkey;              // 최적화 실행 (신형 InputSystem Key)
