@@ -21,7 +21,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[BepInPlugin("com.jeongmok.sephiria.optimizer", "Sephiria Optimizer", "0.1.1")]
+[BepInPlugin("com.jeongmok.sephiria.optimizer", "Sephiria Optimizer", "0.1.2")]
 public class OptimizerPlugin : BaseUnityPlugin
 {
     private ConfigEntry<Key> _hotkey;              // 최적화 실행 (신형 InputSystem Key)
@@ -480,13 +480,33 @@ public static class GameBridge
             for (sbyte x = 0; x < cols; x++)
                 if (inv.PosToIdx(x, y) < storage) m.AllCells.Add(((int)y, (int)x));
 
-        // 1b) 신비 콤보 ×2 칸 (게임이 무작위 고정 — 그대로 읽어 반영)
+        // 1b) 신비 콤보 ×2 칸: 표시용 좌표만 수집. (실제 ×2 효과는 아래 fixedEngravingsOnServer 에 이미 포함됨)
         try { foreach (var mp in inv.mysticPositions) m.MysticCells.Add((mp.y, mp.x)); } catch { }
-        foreach (var mc in m.MysticCells)
-            m.BaseEffects.Add((mc, StoneTablet.EffectType.MultiplyConstLevel, InvModel.MysticMul));
-        if (m.MysticCells.Count > 0) log?.LogInfo($"  [mystic] x{InvModel.MysticMul} cells: {string.Join(" ", m.MysticCells.Select(c => $"({c.Item1},{c.Item2})"))}");
 
-        // 1c) 인벤토리 각인(engraving) — 영구 각인된 석판 효과를 고정 베이스로 반영
+        // 1c) 고정 베이스 효과 수집기 (격자/스토리지 범위 검증)
+        void AddBase(int ex, int ey, StoneTablet.EffectType ty, int param)
+        {
+            if (ex < 0 || ex >= cols || ey < 0 || ey >= rows) return;
+            if (inv.PosToIdx((sbyte)ex, (sbyte)ey) >= storage) return;
+            if (ty == StoneTablet.EffectType.None) return;
+            m.BaseEffects.Add(((ey, ex), ty, param));
+        }
+
+        // 1c-1) 인벤토리 각인(fixedEngravingsOnServer) — '석판을 인벤토리에 각인' 기능. 신비 콤보도 여기 포함.
+        int feN = 0;
+        try
+        {
+            foreach (var fe in inv.fixedEngravingsOnServer)
+            {
+                if (fe == null) continue;
+                feN++;
+                foreach (var ed in fe.effectRange)
+                    AddBase(ed.position.x, ed.position.y, ed.effectType, ed.levelParam);
+            }
+        }
+        catch (Exception ex) { log?.LogWarning("fixedEngravings read failed: " + ex.Message); }
+
+        // 1c-2) 각인 슬롯(engravings, SyncList<StoneTablet>) — 별도 각인 영역. 있으면 함께 반영.
         int engN = 0;
         try
         {
@@ -495,17 +515,12 @@ public static class GameBridge
                 if (eng == null) continue;
                 engN++;
                 foreach (var ed in eng.EffectRange)
-                {
-                    int ex = ed.position.x, ey = ed.position.y;
-                    if (ex < 0 || ex >= cols || ey < 0 || ey >= rows) continue;
-                    if (inv.PosToIdx((sbyte)ex, (sbyte)ey) >= storage) continue;
-                    if (ed.effectType == StoneTablet.EffectType.None) continue;
-                    m.BaseEffects.Add(((ey, ex), ed.effectType, ed.levelParam));
-                }
+                    AddBase(ed.position.x, ed.position.y, ed.effectType, ed.levelParam);
             }
         }
         catch { }
-        if (engN > 0) log?.LogInfo($"  [engraving] {engN} engraved tablet(s) folded into base effects");
+
+        log?.LogInfo($"  [base effects] fixedEngravings={feN}, engravingSlots={engN}, mysticCells={m.MysticCells.Count}, baseEffectEntries={m.BaseEffects.Count}");
 
         // 2) 석판 수집 + 후보 위치별 효과영역 사전 계산 (ParseQuery, 현재 회전 고정)
         foreach (var item in inv.inventoryMatrix.Values)
