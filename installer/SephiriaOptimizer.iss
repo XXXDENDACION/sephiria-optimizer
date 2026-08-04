@@ -1,9 +1,9 @@
-; Sephiria Optimizer - Inno Setup 설치 스크립트
-; 빌드: ISCC.exe installer\SephiriaOptimizer.iss
-; 결과: dist\SephiriaOptimizer_v0.1.1_Setup.exe
+; Sephiria Optimizer - Inno Setup installation script
+; Build: ISCC.exe installer\SephiriaOptimizer.iss
+; Output: dist\SephiriaOptimizer_v0.1.1_Setup.exe
 ;
-; 동작: Steam 레지스트리 + libraryfolders.vdf 로 세피리아 설치 폴더를 자동 탐지하여
-;       BepInEx + 플러그인을 설치한다. (배포용 = 치트 기능 없는 릴리스 DLL)
+; Behavior: automatically locate the Sephiria installation via the Steam registry + libraryfolders.vdf,
+;           then install BepInEx + the plugin. (Distribution package = release DLL without cheat features)
 
 #define MyAppName "Sephiria Optimizer"
 #define MyAppVersion "0.1.1"
@@ -14,7 +14,7 @@ AppId={{B2E4B8A1-1C2D-4E3F-9A6B-7C8D9E0F1A2B}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-; 게임이 Program Files 아래 있을 수 있으므로 관리자 권한으로 설치
+; Install with administrator privileges because the game may be under Program Files
 PrivilegesRequired=admin
 DefaultDirName={code:GetSephiriaDir}
 DisableProgramGroupPage=yes
@@ -24,19 +24,19 @@ OutputBaseFilename=SephiriaOptimizer_v{#MyAppVersion}_Setup
 Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
-; 제거 시 Add/Remove Programs 에 표시
+; Show in Add/Remove Programs for uninstallation
 Uninstallable=yes
-AppComments=세피리아 인벤토리 최적 배치 모드 (BepInEx)
+AppComments=Sephiria inventory placement optimizer mod (BepInEx)
 
 [Languages]
 Name: "default"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-; dist\payload 의 모든 내용(winhttp.dll, doorstop, BepInEx\, README)을 게임 폴더로 복사
+; Copy all contents of dist\payload (winhttp.dll, doorstop, BepInEx\, README) to the game folder
 Source: "..\dist\payload\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs ignoreversion
 
 [Run]
-Filename: "{app}\README.md"; Description: "설치 안내(README) 열기"; Flags: postinstall shellexec skipifsilent
+Filename: "{app}\README.md"; Description: "Open installation guide (README)"; Flags: postinstall shellexec skipifsilent
 
 [Code]
 function NormalizePath(s: String): String;
@@ -62,7 +62,7 @@ begin
     Result := NormalizePath(p);
 end;
 
-// libraryfolders.vdf 를 읽어 다른 드라이브의 라이브러리에서도 세피리아를 찾는다.
+// Read libraryfolders.vdf to find Sephiria in libraries on other drives as well.
 function FindInLibraries(steam: String): String;
 var vdf, content, rest, libpath, cand: String; q1, q2, idx: Integer;
 begin
@@ -93,7 +93,7 @@ begin
   end;
 end;
 
-// DefaultDirName 으로 사용: 세피리아 폴더 자동 탐지
+// Used by DefaultDirName: automatically detect the Sephiria folder
 function GetSephiriaDir(Param: String): String;
 var steam, cand: String;
 begin
@@ -105,11 +105,11 @@ begin
     cand := FindInLibraries(steam);
     if cand <> '' then begin Result := cand; exit; end;
   end;
-  // 기본값 (못 찾아도 사용자가 직접 선택할 수 있게)
+  // Default value (allows the user to select the folder manually if detection fails)
   Result := 'C:\Program Files (x86)\Steam\steamapps\common\Sephiria';
 end;
 
-// 폴더 확인 페이지에서 Sephiria.exe 존재 검증
+// Verify that Sephiria.exe exists on the folder confirmation page
 function NextButtonClick(CurPageID: Integer): Boolean;
 begin
   Result := True;
@@ -117,9 +117,9 @@ begin
   begin
     if not FileExists(AddBackslash(WizardDirValue) + 'Sephiria.exe') then
     begin
-      if MsgBox('선택한 폴더에서 Sephiria.exe 를 찾지 못했습니다.' + #13#10 +
-                '세피리아 설치 폴더가 맞는지 확인하세요. (Steam → Sephiria 우클릭 → 관리 → 로컬 파일 보기)' + #13#10#13#10 +
-                '그래도 계속할까요?', mbConfirmation, MB_YESNO) = IDNO then
+      if MsgBox('Sephiria.exe was not found in the selected folder.' + #13#10 +
+                'Make sure this is the Sephiria installation folder. (Steam → right-click Sephiria → Manage → Browse local files)' + #13#10#13#10 +
+                'Continue anyway?', mbConfirmation, MB_YESNO) = IDNO then
         Result := False;
     end;
   end;

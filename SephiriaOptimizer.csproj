@@ -6,10 +6,10 @@
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <!-- 프로젝트 루트의 .cs 파일만 컴파일 (decompiled\ 등은 제외) -->
+    <!-- Compile only .cs files in the project root (exclude decompiled\ and similar directories) -->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <!-- 개발용 빌드: dotnet build -p:Sandbox=true → 아이템 추가/삭제 기능 포함
-         배포용 빌드: dotnet build (Sandbox 미지정) → 추가/삭제 코드 자체가 제외됨 -->
+    <!-- Development build: dotnet build -p:Sandbox=true → includes item add/remove features
+         Release build: dotnet build (Sandbox unspecified) → excludes the add/remove code entirely -->
     <DefineConstants Condition="'$(Sandbox)'=='true'">$(DefineConstants);SANDBOX</DefineConstants>
   </PropertyGroup>
 
@@ -17,7 +17,7 @@
     <Compile Include="SephiriaOptimizerPlugin.cs" />
   </ItemGroup>
 
-  <!-- BepInEx / HarmonyX (빌드 참조용, 게임 런타임이 제공하므로 복사 안 함) -->
+  <!-- BepInEx / HarmonyX (build references only; provided by the game runtime, so do not copy) -->
   <ItemGroup>
     <Reference Include="BepInEx">
       <HintPath>bepinex_dist\BepInEx\core\BepInEx.dll</HintPath>
@@ -29,7 +29,7 @@
     </Reference>
   </ItemGroup>
 
-  <!-- 게임 어셈블리 (libs\ 로 복사해둔 사본, 복사 안 함) -->
+  <!-- Game assemblies (copies stored in libs\; do not copy to the output) -->
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>libs\Assembly-CSharp.dll</HintPath>

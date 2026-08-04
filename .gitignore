@@ -1,31 +1,31 @@
-# ───────────── 빌드 산출물 ─────────────
+# ───────────── Build artifacts ─────────────
 bin/
 obj/
 *.user
 *.suo
 
-# ───────────── 게임 저작물 (절대 커밋 금지) ─────────────
-# 게임 설치 폴더에서 복사해온 어셈블리 / 디컴파일 소스
+# ───────────── Copyrighted game files (never commit) ─────────────
+# Assemblies copied from the game installation / decompiled sources
 libs/
 decompiled/
 
-# ───────────── 서드파티 / 다운로드 바이너리 ─────────────
+# ───────────── Third-party / downloaded binaries ─────────────
 bepinex_dist/
 BepInEx_win_x64_*/
 BepInEx_win_x64_*.zip
 dotnet-sdk-*.exe
 
-# ───────────── 릴리스 산출물 (Releases 에 업로드) ─────────────
-# dist 폴더는 README.md 만 추적, 나머지(zip·임시 스테이징 폴더)는 제외
+# ───────────── Release artifacts (uploaded to Releases) ─────────────
+# Track only README.md in dist; exclude everything else (ZIPs and temporary staging folders)
 dist/*
 !dist/README.md
 
-# ───────────── 에디터 / OS ─────────────
+# ───────────── Editor / OS ─────────────
 .vs/
 .idea/
 .vscode/
 Thumbs.db
 .DS_Store
 
-# Claude 로컬 설정
+# Local Claude settings
 .claude/

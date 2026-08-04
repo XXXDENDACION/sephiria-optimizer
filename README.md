@@ -1,150 +1,150 @@
-# 세피리아 인벤토리 최적 배치 모드 (Sephiria Optimizer)
+# Sephiria Optimized Inventory Layout Mod (Sephiria Optimizer)
 
-세피리아(Sephiria)에서 **가방 속 아티팩트와 석판을 어디에 놓아야 가장 강한지** 자동으로 계산해 주는 모드입니다.
-버튼 한 번(F8)이면 최적 배치를 추천하고, 또 한 번(F9)이면 자동으로 정리해 줍니다.
+This mod automatically calculates **where to place the artifacts and tablets in your bag to make the build as strong as possible** in Sephiria.
+One keypress (F8) recommends the optimal layout, and another (F9) arranges it automatically.
 
-> 🎮 대상 게임: **Sephiria** (Steam) · 🧩 필요 도구: **BepInEx 5**
-> 💡 모드를 *사용만* 할 거면 아래 **"1. 설치하기"** 만 보면 됩니다. 코딩 지식 필요 없습니다.
-
----
-
-## 📑 목차
-1. [설치하기 (사용자용)](#1-설치하기-사용자용)
-2. [사용법 — 단축키](#2-사용법--단축키)
-3. [이 모드가 하는 일](#3-이-모드가-하는-일)
-4. [자주 묻는 질문 (문제 해결)](#4-자주-묻는-질문-문제-해결)
-5. [제거하기](#5-제거하기)
-6. [개발자용 — 소스에서 직접 빌드](#6-개발자용--소스에서-직접-빌드)
-7. [주의사항 / 라이선스](#7-주의사항--라이선스)
+> 🎮 Target game: **Sephiria** (Steam) · 🧩 Required tool: **BepInEx 5**
+> 💡 If you only want to *use* the mod, read **"1. Installation"** below. No programming knowledge is required.
 
 ---
 
-## 1. 설치하기 (사용자용)
+## 📑 Table of Contents
+1. [Installation (Users)](#1-installation-users)
+2. [Usage — Keyboard Shortcuts](#2-usage--keyboard-shortcuts)
+3. [What This Mod Does](#3-what-this-mod-does)
+4. [Frequently Asked Questions (Troubleshooting)](#4-frequently-asked-questions-troubleshooting)
+5. [Removal](#5-removal)
+6. [Developers — Build from Source](#6-developers--build-from-source)
+7. [Caution / License](#7-caution--license)
 
-### 준비물
-- **통합 설치본 zip** 하나만 받으면 됩니다 → [Releases 페이지](../../releases)에서
-  `SephiriaOptimizer_vX.X.X_full-install.zip` 다운로드.
-  (이 zip 안에 BepInEx까지 다 들어 있어서 따로 받을 게 없습니다.)
+---
 
-### 1단계 — 게임 폴더 열기
-1. Steam을 켭니다.
-2. 라이브러리에서 **Sephiria 우클릭 → 관리 → 로컬 파일 보기** 를 누릅니다.
-3. 그러면 게임이 설치된 폴더가 열립니다. 보통 이런 경로입니다:
+## 1. Installation (Users)
+
+### Requirements
+- Download the single **full installation zip** from the [Releases page](../../releases):
+  `SephiriaOptimizer_vX.X.X_full-install.zip`.
+  (This zip already includes BepInEx, so there is nothing else to download.)
+
+### Step 1 — Open the Game Folder
+1. Open Steam.
+2. In your Library, **right-click Sephiria → Manage → Browse local files**.
+3. The game's installation folder opens. Its path is usually:
    ```
    C:\Program Files (x86)\Steam\steamapps\common\Sephiria
    ```
-   이 폴더 안에 **`Sephiria.exe`** 가 보이면 맞게 찾은 겁니다.
+   You have found the correct folder if **`Sephiria.exe`** is inside it.
 
-### 2단계 — zip 풀어서 복사
-1. 받은 `SephiriaOptimizer_..._full-install.zip` 을 **압축 해제**합니다.
-2. 압축을 풀면 이런 파일/폴더들이 나옵니다:
+### Step 2 — Extract and Copy the Zip
+1. **Extract** the downloaded `SephiriaOptimizer_..._full-install.zip`.
+2. The extracted files and folders look like this:
    ```
    winhttp.dll
    doorstop_config.ini
    .doorstop_version
-   BepInEx\        (폴더)
+   BepInEx\        (folder)
    README.md
    ```
-3. 이 **파일/폴더 전부를** 1단계에서 연 **게임 폴더에 그대로 복사**합니다.
-   (즉, `Sephiria.exe` 옆에 `winhttp.dll` 과 `BepInEx` 폴더가 나란히 있게 됩니다.)
+3. **Copy all of these files and folders directly into the game folder** opened in Step 1.
+   (`winhttp.dll` and the `BepInEx` folder should end up next to `Sephiria.exe`.)
 
-> ✅ 제대로 됐는지 보는 법: 게임 폴더 안에 `Sephiria.exe` 와 `winhttp.dll` 이 **같은 위치**에 있으면 정상입니다.
+> ✅ To verify the file placement, make sure `Sephiria.exe` and `winhttp.dll` are in **the same folder**.
 
-### 3단계 — 한 번 실행해서 확인
-1. 게임을 **한 번 실행했다가 종료**합니다.
-2. 게임 폴더에 새로 생긴 `BepInEx\LogOutput.log` 파일을 메모장으로 엽니다.
-3. 그 안에 아래 줄이 보이면 **설치 성공**입니다:
+### Step 3 — Launch Once to Verify
+1. **Launch the game once, then exit.**
+2. Open the newly created `BepInEx\LogOutput.log` in the game folder with Notepad.
+3. Installation succeeded if you see this line:
    ```
    Sephiria Optimizer loaded.
    ```
 
-이제 게임 안에서 가방을 열고 **F8** 을 누르면 됩니다!
+You can now open the bag in the game and press **F8**.
 
 ---
 
-## 2. 사용법 — 단축키
+## 2. Usage — Keyboard Shortcuts
 
-게임 안에서 **가방(인벤토리)을 연 상태**에서 사용합니다.
+Use these shortcuts while the **bag (inventory) is open** in the game.
 
-| 키 | 기능 |
+| Key | Function |
 |----|------|
-| **F8** | 가방을 분석해서 **최적 배치를 추천** (화면 왼쪽 위에 표시) |
-| **F9** | 추천한 대로 **자동으로 정리** (아이템·석판을 옮김) |
-| **F6** | 추천 화면(오버레이) **접기 / 펼치기** (게임 화면 가릴 때) |
+| **F8** | Analyze the bag and **recommend an optimal layout** (shown in the upper-left corner) |
+| **F9** | **Automatically arrange** items and tablets according to the recommendation |
+| **F6** | **Collapse / expand** the recommendation overlay when it obstructs the game |
 
-화면에 나오는 버튼:
-- **[우선N]** : 아이템 옆 버튼을 클릭하면 우선순위가 `없음 → 1 → 2 → 3 → 4 → 5 → 없음` 순서로 바뀝니다.
-  숫자가 클수록 **그 아이템을 더 좋은 칸(석판·신비 효과 칸)에 우선** 배치합니다.
-- **[필러]** : 포션 같은 소비 아이템은 자동으로 "필러"로 표시되며, 좋은 칸을 피해 구석으로 배치됩니다.
+Buttons shown in the overlay:
+- **[Priority N]**: click the button next to an item to cycle its priority through `None → 1 → 2 → 3 → 4 → 5 → None`.
+  A higher number places that item in a **better cell (a tablet or Mystic effect cell) first**.
+- **[Filler]**: consumables such as potions are automatically marked as filler and placed in corners away from valuable cells.
 
-> 🔧 단축키를 바꾸고 싶으면 `BepInEx\config\com.jeongmok.sephiria.optimizer.cfg` 파일을 메모장으로 열어 수정하면 됩니다.
+> 🔧 To change the keyboard shortcuts, edit `BepInEx\config\com.jeongmok.sephiria.optimizer.cfg` in Notepad.
 
-### 추천 사용 흐름
+### Recommended Workflow
 ```
-가방 열기 → F8(추천 보기) → 마음에 들면 F9(자동 정리) → 게임 화면 가리면 F6(접기)
+Open bag → F8 (view recommendation) → if satisfied, F9 (auto-arrange) → if the overlay obstructs the game, F6 (collapse)
 ```
 
 ---
 
-## 3. 이 모드가 하는 일
+## 3. What This Mod Does
 
-세피리아는 가방 칸에 어떤 아티팩트·석판을 어디 두느냐에 따라 효과가 크게 달라집니다.
-이 모드는 그 **"가장 좋은 배치"를 수학적으로 계산**해 줍니다. 구체적으로:
+In Sephiria, an artifact's or tablet's effect can change dramatically depending on where it is placed in the bag.
+This mod **mathematically calculates the best layout**. Specifically, it:
 
-- 가방 속 아티팩트의 **레벨·별(상한)·콤보 태그**를 게임에서 직접 읽습니다. (마우스로 일일이 안 올려봐도 됨)
-- **석판 효과**(특정 칸 아티팩트 레벨 +N, ×N 등)를 칸 단위로 계산하고, 석판도 옮길 위치를 같이 찾습니다.
-- **발동 조건**(예: "가장 아래 칸에 있어야 효과 발동")이 있는 아티팩트는 조건을 만족하는 자리에 둡니다.
-- **신비 콤보**처럼 특정 칸 레벨을 2배로 만드는 효과도 반영합니다.
-- 이 모든 걸 종합해 **전체적으로 가장 강해지는 배치**를 찾아 추천합니다.
-- 적용(F9)은 게임의 **정상적인 이동 방식**을 사용해서, 멀티플레이에서도 안전합니다.
-
----
-
-## 4. 자주 묻는 질문 (문제 해결)
-
-**Q. F8을 눌러도 아무 반응이 없어요.**
-- 가방(인벤토리) 창을 **연 상태**에서 눌렀나요? 가방을 먼저 열어야 합니다.
-- 설치가 됐는지 확인: `BepInEx\LogOutput.log` 에 `Sephiria Optimizer loaded.` 가 있는지 보세요. 없으면 2단계 복사가 잘못된 것입니다.
-
-**Q. `BepInEx` 폴더나 `LogOutput.log` 가 안 생겨요.**
-- `winhttp.dll` 이 `Sephiria.exe` 와 **같은 폴더**에 있는지 확인하세요. zip 내용물을 게임 폴더가 아닌 다른 곳에 푼 경우가 많습니다.
-
-**Q. 게임 업데이트 후 모드가 안 돼요.**
-- 이 모드는 특정 게임 버전에 맞춰져 있어, 게임이 크게 업데이트되면 멈출 수 있습니다. 모드 업데이트(새 버전)를 기다려 주세요.
-
-**Q. 추천이 이상해요 / 레벨이 실제와 달라요.**
-- 가방을 닫았다 다시 열고 F8을 눌러보세요. 그래도 다르면 제보해 주시면 좋습니다.
+- Reads the **level, stars (maximum level), and combo tags** of artifacts in the bag directly from the game. You do not need to hover over each artifact manually.
+- Calculates **tablet effects** (such as artifact level +N or ×N in specific cells) cell by cell and also finds positions for the tablets themselves.
+- Places artifacts with **activation conditions** (for example, "the effect activates only in the bottom row") where those conditions are satisfied.
+- Accounts for effects such as the **Mystic combo**, which doubles levels in specific cells.
+- Combines all of these factors to recommend the **strongest overall layout**.
+- Applies the layout (F9) through the game's **normal item-movement path**, making it safe for multiplayer.
 
 ---
 
-## 5. 제거하기
+## 4. Frequently Asked Questions (Troubleshooting)
 
-- **모드만 끄기**: 게임 폴더의 `BepInEx\plugins\SephiriaOptimizer.dll` 파일을 지웁니다.
-- **완전 제거**: 게임 폴더에서 `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version`, `BepInEx\` 폴더를 모두 지웁니다.
-  (게임 원본 파일은 건드리지 않으니 안전합니다.)
+**Q. Nothing happens when I press F8.**
+- Did you press it while the **bag (inventory) window was open**? Open the bag first.
+- Verify the installation: check whether `BepInEx\LogOutput.log` contains `Sephiria Optimizer loaded.`. If not, the files were probably copied to the wrong location in Step 2.
+
+**Q. The `BepInEx` folder or `LogOutput.log` is not created.**
+- Make sure `winhttp.dll` is in **the same folder** as `Sephiria.exe`. A common mistake is extracting the zip somewhere other than the game folder.
+
+**Q. The mod stopped working after a game update.**
+- The mod targets a specific game version, so a major game update may break it. Please wait for an updated mod release.
+
+**Q. The recommendation looks wrong / the displayed levels differ from the game.**
+- Close and reopen the bag, then press F8 again. If the problem remains, please report it.
 
 ---
 
-## 6. 개발자용 — 소스에서 직접 빌드
+## 5. Removal
 
-> ⚠️ 여기는 **모드를 직접 고치거나 컴파일하려는 사람**만 보면 됩니다. 그냥 쓸 거면 1번 항목만 보세요.
+- **Disable only the mod**: delete `BepInEx\plugins\SephiriaOptimizer.dll` from the game folder.
+- **Remove everything**: delete `winhttp.dll`, `doorstop_config.ini`, `.doorstop_version`, and the `BepInEx\` folder from the game folder.
+  (This does not modify the original game files.)
 
-이 저장소에는 **게임 파일과 BepInEx 파일이 들어 있지 않습니다**(저작권·용량 때문에 제외). 그래서 빌드하려면 본인이 직접 채워 넣어야 합니다.
+---
 
-### 준비물
-- [.NET SDK 8](https://dotnet.microsoft.com/download) 설치
-- 본인이 소유한 세피리아 게임 (어셈블리 파일을 복사해 와야 함)
-- [BepInEx 5 (x64, Mono)](https://github.com/BepInEx/BepInEx/releases) zip
+## 6. Developers — Build from Source
 
-### 폴더 구조 (목표)
-저장소를 받으면 이렇게 만들어야 빌드가 됩니다. **굵게** 표시한 두 폴더(`libs`, `bepinex_dist`)를 직접 만들어 채웁니다.
+> ⚠️ This section is only for people who want to **modify or compile the mod themselves**. If you only want to use it, read Section 1.
+
+This repository does **not include game files or BepInEx files** because of copyright and repository-size constraints. You must provide them yourself to build the project.
+
+### Requirements
+- Install [.NET SDK 8](https://dotnet.microsoft.com/download).
+- Own a copy of Sephiria so you can copy its assembly files.
+- Download the [BepInEx 5 (x64, Mono)](https://github.com/BepInEx/BepInEx/releases) zip.
+
+### Target Folder Structure
+After cloning the repository, create and populate the two folders marked below in bold (`libs` and `bepinex_dist`).
 
 ```
-sephiria-optimizer\                  ← 저장소 루트 (csproj 가 있는 폴더)
+sephiria-optimizer\                  ← repository root (the folder containing the csproj)
 ├── SephiriaOptimizer.csproj
 ├── SephiriaOptimizerPlugin.cs
 │
-├── libs\                            ← ★ 직접 만들기: 게임에서 복사한 DLL
+├── libs\                            ← ★ create manually: DLLs copied from the game
 │   ├── Assembly-CSharp.dll
 │   ├── Mirror.dll
 │   ├── UnityEngine.dll
@@ -154,42 +154,42 @@ sephiria-optimizer\                  ← 저장소 루트 (csproj 가 있는 폴
 │   ├── UnityEngine.TextRenderingModule.dll
 │   └── Unity.InputSystem.dll
 │
-└── bepinex_dist\                    ← ★ 직접 만들기: BepInEx zip 을 푼 것
+└── bepinex_dist\                    ← ★ create manually: extracted BepInEx zip
     └── BepInEx\core\
         ├── BepInEx.dll
         └── 0Harmony.dll
 ```
 
-### 1단계 — `libs\` 채우기
-게임 설치 폴더의 `Sephiria_Data\Managed\` 안에서 위 8개 DLL을 복사해 저장소 루트의 `libs\` 폴더에 붙여넣습니다.
-> "Sephiria_Data\Managed" 는 게임 폴더(`Sephiria.exe` 가 있는 곳) 안에 있습니다.
+### Step 1 — Populate `libs\`
+Copy the eight DLLs shown above from `Sephiria_Data\Managed\` in the game installation folder into `libs\` at the repository root.
+> `Sephiria_Data\Managed` is inside the game folder that contains `Sephiria.exe`.
 
-### 2단계 — `bepinex_dist\` 채우기
-BepInEx 5 zip(`BepInEx_win_x64_5.x.x.zip`)을 받아 저장소 루트에 `bepinex_dist` 폴더를 만들고 그 안에 **압축 해제**합니다.
-풀면 `bepinex_dist\BepInEx\core\BepInEx.dll` 이 생깁니다. (빌드가 이 파일을 참조합니다.)
+### Step 2 — Populate `bepinex_dist\`
+Download the BepInEx 5 zip (`BepInEx_win_x64_5.x.x.zip`), create a `bepinex_dist` folder at the repository root, and **extract the zip into it**.
+After extraction, `bepinex_dist\BepInEx\core\BepInEx.dll` should exist. The build references this file.
 
-### 3단계 — 빌드
-저장소 루트에서 터미널을 열고:
+### Step 3 — Build
+Open a terminal at the repository root and run:
 
 ```sh
-# 배포용 (아이템 추가/삭제 같은 치트 기능 제외)
+# Distribution build (excludes cheat features such as adding/deleting items)
 dotnet build -c Release -o bin\release SephiriaOptimizer.csproj
 
-# 개발용 (F7 아이템 추가/삭제 기능 포함 — 테스트용)
+# Development build (includes F7 item add/delete features for testing)
 dotnet build -c Release -p:Sandbox=true -o bin\dev SephiriaOptimizer.csproj
 ```
 
-만들어진 `SephiriaOptimizer.dll` 을 게임의 `BepInEx\plugins\` 에 복사하면 됩니다.
+Copy the generated `SephiriaOptimizer.dll` into the game's `BepInEx\plugins\` folder.
 
-> 💡 **개발용 vs 배포용**: `-p:Sandbox=true` 를 붙이면 F7(아이템 추가)·삭제 기능이 들어간 *개발용* 빌드가 됩니다.
-> 붙이지 않으면 그 기능이 **코드 단계에서 완전히 빠진** *배포용* 빌드가 됩니다. 남에게 줄 때는 배포용으로 빌드하세요.
+> 💡 **Development vs. distribution**: adding `-p:Sandbox=true` produces a *development* build that includes the F7 item-add and item-delete features.
+> Without that property, those features are **completely excluded at compile time**, producing a *distribution* build. Use the distribution build when sharing the mod.
 
 ---
 
-## 7. 주의사항 / 라이선스
+## 7. Caution / License
 
-- **게임 버전 의존성**: 특정 게임 빌드 구조에 맞춰져 있어, 게임 대규모 업데이트 시 깨질 수 있습니다.
-- **F9 자동 적용**은 실제 게임 상태를 바꿉니다(게임 정식 이동 경로 사용). 중요한 순간엔 신중히.
-- **배포본에는 아이템 추가/삭제 같은 치트 기능이 없습니다.** (개발용 빌드에만 존재)
-- 게임의 어떤 파일도 이 저장소·배포물에 포함되어 있지 않습니다.
-- 모드 코드는 자유롭게 사용/수정 가능합니다. BepInEx 는 해당 프로젝트 라이선스를 따릅니다.
+- **Game-version dependency**: the mod targets a specific game build structure and may break after a major game update.
+- **F9 auto-apply** changes the actual game state through the game's official item-movement path. Use it carefully at important moments.
+- **Distribution builds do not include cheat features such as adding or deleting items.** These exist only in development builds.
+- No game files are included in this repository or its distributions.
+- The mod's code may be freely used and modified. BepInEx remains subject to its own project license.

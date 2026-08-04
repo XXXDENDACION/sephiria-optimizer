@@ -1,5 +1,5 @@
 [Error  :   BepInEx] Unable to start Unity log writer
-[Message:   BepInEx] BepInEx 5.4.23.3 - Sephiria (2026-05-28 오전 4:10:13)
+[Message:   BepInEx] BepInEx 5.4.23.3 - Sephiria (2026-05-28 AM 4:10:13)
 [Info   :   BepInEx] Running under Unity v6000.3.13.9195281
 [Info   :   BepInEx] CLR runtime version: 4.0.30319.42000
 [Info   :   BepInEx] Supports SRE: True
@@ -17,664 +17,664 @@
 [Message:   BepInEx] Chainloader startup complete
 [Info   :Sephiria Optimizer] Optimize key pressed.
 [Info   :Sephiria Optimizer] Inventory found via avatar scan: 6x7, items 2
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=967366694 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 7x6, artifacts 1, tablets 0, cells 38, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
 [Info   :Sephiria Optimizer] Inventory found via avatar scan: 6x5, items 2
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 1, tablets 0, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(0,0) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 1, tablets 0, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 1·석판 0 · 점수 1→1 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 1·Tablets 0 · Score 1→1 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=318259332 cell=(3,2) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=318259332 cell=(3,2) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=318259332 cell=(3,2) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=318259332 cell=(3,2) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=318259332 cell=(3,2) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=318259332 cell=(3,2) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=318259332 cell=(3,2) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=318259332 cell=(3,2) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=318259332 cell=(3,2) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=318259332 cell=(3,2) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(3,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(3,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,1) E=1 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=1 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,1) E=1 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=1 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 12→14 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 12→14 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (6회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (6 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(1,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(1,2) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(0,3) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,2) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(0,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(1,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(1,2) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(0,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,2) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(0,4) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(1,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(1,2) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(0,3) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,2) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(0,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(1,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(1,2) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(0,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,2) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(0,4) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 미래 inst=716338248 cell=(1,3) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(1,2) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(0,3) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,2) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(0,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Future inst=716338248 cell=(1,3) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(1,2) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(0,3) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,2) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(0,4) E=0 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 0
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 10→10 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 10→10 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 0, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 0 · 점수 35→35 · 이동 0칸 · F9=적용
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 0 · Score 35→35 · Moves 0 cells · F9=Apply
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 0, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 0 · 점수 203→203 · 이동 0칸 · F9=적용
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 0 · Score 203→203 · Moves 0 cells · F9=Apply
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 0, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 0 · 점수 1547→1547 · 이동 0칸 · F9=적용
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 0 · Score 1547→1547 · Moves 0 cells · F9=Apply
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 0, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 0 · 점수 12299→12299 · 이동 0칸 · F9=적용
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 0 · Score 12299→12299 · Moves 0 cells · F9=Apply
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 0, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 0 · 점수 98315→98315 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 0 · Score 98315→98315 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(1,2) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(1,2) rot=0
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,1) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(2,3) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(2,1) E=2 max=4 criteria=none tags=[COMPANION]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98315→98316 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98315→98316 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (6회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (6 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(0,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(3,5) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,1) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,2) E=2 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(2,1) E=2 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(0,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(3,5) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,1) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,2) E=2 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(2,1) E=2 max=0 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 65544→65545 · 이동 5칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 65544→65545 · Moves 5 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (5회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (5 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(0,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(0,2) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(1,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(2,5) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(3,1) E=2 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(0,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(0,2) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(1,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(2,5) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(3,1) E=2 max=0 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 65543→65544 · 이동 6칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 65543→65544 · Moves 6 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (6회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (6 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 5, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 5·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 5·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (1회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (1 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (2회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (2 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,4) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 재생의 포션 inst=680463321 cell=(3,2) E=0 max=5 criteria=none tags=[]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,4) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(1,5) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Regeneration Potion inst=680463321 cell=(3,2) E=0 max=5 criteria=none tags=[]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,3) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(0,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(1,4) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(3,1) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 6, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 6·석판 1 · 점수 98312→98312 · 이동 7칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 6·Tablets 1 · Score 98312→98312 · Moves 7 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (7회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (7 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,1) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 재생의 포션 inst=680463321 cell=(4,2) E=0 max=5 criteria=none tags=[]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,2) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(3,5) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,1) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Regeneration Potion inst=680463321 cell=(4,2) E=0 max=5 criteria=none tags=[]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,2) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(3,5) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 6, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 6·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 6·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.
 [Info   :Sephiria Optimizer] Optimize key pressed.
-[Info   :Sephiria Optimizer]   [tablet] 기적 inst=73141576 cell=(3,1) rot=0
-[Info   :Sephiria Optimizer]   [artifact] 황금 단풍잎 inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 재생의 포션 inst=680463321 cell=(4,2) E=0 max=5 criteria=none tags=[]
-[Info   :Sephiria Optimizer]   [artifact] 간이 계약서 inst=1151098901 cell=(3,4) E=0 max=4 criteria=none tags=[COMPANION]
-[Info   :Sephiria Optimizer]   [artifact] 흰 테두리 빵 inst=1564595922 cell=(3,2) E=0 max=2 criteria=none tags=[GUARDIAN]
-[Info   :Sephiria Optimizer]   [artifact] 크리톤의 인장 inst=857778500 cell=(3,5) E=0 max=2 criteria=none tags=[SAVVY]
-[Info   :Sephiria Optimizer]   [artifact] 행운의 메달 inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [tablet] Miracle inst=73141576 cell=(3,1) rot=0
+[Info   :Sephiria Optimizer]   [artifact] Golden Maple Leaf inst=975085270 cell=(0,2) E=0 max=0 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Regeneration Potion inst=680463321 cell=(4,2) E=0 max=5 criteria=none tags=[]
+[Info   :Sephiria Optimizer]   [artifact] Simple Contract inst=1151098901 cell=(3,4) E=0 max=4 criteria=none tags=[COMPANION]
+[Info   :Sephiria Optimizer]   [artifact] White-Bordered Bread inst=1564595922 cell=(3,2) E=0 max=2 criteria=none tags=[GUARDIAN]
+[Info   :Sephiria Optimizer]   [artifact] Criton's Seal inst=857778500 cell=(3,5) E=0 max=2 criteria=none tags=[SAVVY]
+[Info   :Sephiria Optimizer]   [artifact] Lucky Medal inst=1723179605 cell=(2,2) E=2 max=2 criteria=none tags=[SAVVY]
 [Info   :Sephiria Optimizer] Model: grid 5x6, artifacts 6, tablets 1, cells 27, prioritized 1
-[Info   :Sephiria Optimizer] 아티팩트 6·석판 1 · 점수 98312→98312 · 이동 0칸 · F9=적용
+[Info   :Sephiria Optimizer] Artifacts 6·Tablets 1 · Score 98312→98312 · Moves 0 cells · F9=Apply
 [Info   :Sephiria Optimizer] Apply key pressed.
-[Info   :Sephiria Optimizer] 적용 완료 (0회 Swap). 다시 F8로 결과 확인 가능.
+[Info   :Sephiria Optimizer] Apply complete (0 swap operation(s)). Press F8 again to verify the result.

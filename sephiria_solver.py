@@ -1,19 +1,20 @@
 """
-세피리아(Sephiria) 가방 최적 배치 솔버
-=========================================
-'가방(인벤토리) 격자에 아이템을 1칸씩 배치해서 강해지는' 문제를
-'제약 있는 2차 할당 문제(Constrained Quadratic Assignment Problem)'로 모델링한다.
+Sephiria Inventory Optimal-Placement Solver
+===========================================
+Models the problem of placing one item in each inventory-grid cell to become
+stronger as a Constrained Quadratic Assignment Problem.
 
-게임 메커니즘 → 모델 대응
-  - 각 아이템은 1칸 차지 (모양 패킹 없음 → 순수 '할당' 문제)
-  - 점수 = Σ(활성 아이템 가치) + Σ(콤보 보너스)
-  - 아이템 가치는 '최종 레벨'에 의존, 레벨은 '석판'이 영역 단위로 결정 (2단 구조)
-  - 나침반/부적 = 인접·방향 효과 (pairwise → QAP의 2차 항)
-  - 제약(가장자리 금지, 좌우 빈칸 등) 위반 시 비활성화, 레벨 -1 이하도 비활성화
+Game mechanic → model mapping
+  - Each item occupies one cell (no shape packing → pure assignment problem)
+  - Score = Σ(active item value) + Σ(combo bonus)
+  - Item value depends on final level; tablets determine levels by region (two stages)
+  - Compasses/charms create adjacency and directional effects (pairwise → QAP quadratic term)
+  - Violating constraints (not on edge, empty left/right, etc.) deactivates an item;
+    level -1 or lower also deactivates it
 
-엔진
-  - simulated_annealing : 실전용 메인. 임의의 목적함수/제약을 그대로 처리, 빠름
-  - brute_force         : 작은 보드에서 SA의 최적성 검증용
+Engines
+  - simulated_annealing : practical main engine; handles arbitrary objectives/constraints, fast
+  - brute_force         : validates SA optimality on small boards
 """
 
 from __future__ import annotations
@@ -26,9 +27,9 @@ from typing import Callable, Optional, Union
 Cell = tuple[int, int]  # (row, col)
 
 
-# ────────────────────────── 보드 ──────────────────────────
+# ────────────────────────── Board ──────────────────────────
 class Board:
-    """직사각형 격자. blocked로 비정형 모양도 표현 가능."""
+    """Rectangular grid; blocked cells can represent irregular shapes."""
     def __init__(self, rows: int, cols: int, blocked: Optional[set[Cell]] = None):
         self.rows, self.cols = rows, cols
         self.blocked = set(blocked or [])
@@ -41,26 +42,26 @@ class Board:
                 for c in range(self.cols) if (r, c) not in self.blocked]
 
     def is_edge(self, cell: Cell) -> bool:
-        """상하좌우 중 하나라도 보드 밖/blocked이면 가장자리."""
+        """A cell is on an edge if any cardinal neighbor is outside/blocked."""
         r, c = cell
         return any(not self.is_cell(r + dr, c + dc)
                    for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)))
 
 
-# ────────────────────────── 엔티티 ──────────────────────────
+# ────────────────────────── Entities ──────────────────────────
 @dataclass
 class Item:
-    """아티팩트(또는 포션 등 레벨/태그를 갖는 일반 아이템)."""
+    """Artifact, potion, or other regular item with a level and tags."""
     name: str
-    base_value: float = 0.0                 # 레벨 0 기준 기본 점수
-    per_level: float = 0.0                  # 레벨당 추가 점수 (선형 근사)
-    max_level: int = 3                      # 별(레벨 상한)
-    enchant_level: int = 0                  # 인챈트로 미리 올려둔 레벨
-    tags: frozenset[str] = frozenset()      # 콤보 태그
-    is_attack: bool = False                 # 나침반 강화 대상 여부
-    value_fn: Optional[Callable[[int], float]] = None        # 레벨→가치 (있으면 우선)
-    pos_bonus: Optional[Callable[[Cell, Board], float]] = None  # 위치 보너스(예: 맨 윗줄)
-    constraint: Optional[Callable[["Placement", Cell], bool]] = None  # 활성 조건
+    base_value: float = 0.0                 # Base score at level 0
+    per_level: float = 0.0                  # Added score per level (linear approximation)
+    max_level: int = 3                      # Stars (level cap)
+    enchant_level: int = 0                  # Level already granted by enchantment
+    tags: frozenset[str] = frozenset()      # Combo tags
+    is_attack: bool = False                 # Whether compasses can enhance it
+    value_fn: Optional[Callable[[int], float]] = None        # Level → value (takes precedence)
+    pos_bonus: Optional[Callable[[Cell, Board], float]] = None  # Position bonus (e.g. top row)
+    constraint: Optional[Callable[["Placement", Cell], bool]] = None  # Activation condition
 
     def value_at(self, level: int) -> float:
         if self.value_fn is not None:
@@ -70,7 +71,7 @@ class Item:
 
 @dataclass
 class Tablet:
-    """석판: 놓인 칸 기준 영역(region)의 아이템 레벨을 delta만큼 변경(중첩)."""
+    """Tablet: changes item levels by delta in a region relative to its cell; stacks."""
     name: str
     delta: int
     region: Callable[[Cell, Board], set[Cell]]
@@ -79,7 +80,8 @@ class Tablet:
 
 @dataclass
 class Compass:
-    """나침반: 바로 위 칸의 '공격형' 아이템 피해 배수. 아래에 나침반을 이으면 합연산 누적."""
+    """Compass: multiplies an attack item's damage directly above it; consecutive
+    compasses below accumulate additively."""
     name: str
     mult: float = 0.5
     tags: frozenset[str] = frozenset()
@@ -88,7 +90,7 @@ class Compass:
 Entity = Union[Item, Tablet, Compass]
 
 
-# ── 석판 영역 헬퍼 ──
+# ── Tablet-region helpers ──
 def row_region(cell: Cell, board: Board) -> set[Cell]:
     r, _ = cell
     return {(r, c) for c in range(board.cols) if board.is_cell(r, c)}
@@ -104,21 +106,21 @@ def edge_region(cell: Cell, board: Board) -> set[Cell]:
     return {cl for cl in board.cells() if board.is_edge(cl)}
 
 
-# ── 제약 헬퍼 ──
+# ── Constraint helpers ──
 def not_on_edge(p: "Placement", cell: Cell) -> bool:
     return not p.board.is_edge(cell)
 
 def needs_empty_lr(p: "Placement", cell: Cell) -> bool:
-    """좌우 한 칸씩 비어 있어야 작동. 좌우가 가장자리(밖)면 작동 안 함."""
+    """Requires one empty cell on each side; outside-edge cells do not count."""
     r, c = cell
     if not (p.board.is_cell(r, c - 1) and p.board.is_cell(r, c + 1)):
         return False
     return p.entity_at((r, c - 1)) is None and p.entity_at((r, c + 1)) is None
 
 
-# ────────────────────────── 배치 상태 ──────────────────────────
+# ────────────────────────── Placement state ──────────────────────────
 class Placement:
-    """occupied 칸만 dict로 보관. 양방향 매핑으로 swap/undo를 O(1)에."""
+    """Stores only occupied cells; bidirectional maps make swap/undo O(1)."""
     def __init__(self, board: Board, entities: list[Entity]):
         self.board = board
         self.entities = entities
@@ -159,18 +161,18 @@ class Placement:
         return "\n".join(rows)
 
 
-# ────────────────────────── 목적 함수 ──────────────────────────
+# ────────────────────────── Objective function ──────────────────────────
 def build_evaluator(combo_table: dict[str, list[tuple[int, float]]]):
-    """combo_table: 태그 -> [(임계 개수, 보너스), ...]. 도달한 모든 티어 보너스 합산."""
+    """combo_table: tag -> [(count threshold, bonus), ...]. Sum all reached tiers."""
     def evaluate(p: Placement) -> float:
         board, ents = p.board, p.entities
 
-        # 1) 아이템 기본 레벨(인챈트 반영)
+        # 1) Base item levels (including enchantments)
         level: dict[int, int] = {
             idx: ents[idx].enchant_level
             for idx, _ in p.idx_to_cell.items() if isinstance(ents[idx], Item)
         }
-        # 2) 석판 영역 효과 누적
+        # 2) Accumulate tablet-region effects
         for idx, cell in p.idx_to_cell.items():
             e = ents[idx]
             if isinstance(e, Tablet):
@@ -178,11 +180,11 @@ def build_evaluator(combo_table: dict[str, list[tuple[int, float]]]):
                     j = p.cell_to_idx.get(tc)
                     if j is not None and isinstance(ents[j], Item):
                         level[j] += e.delta
-        # 레벨 상한(별) 적용
+        # Apply level caps (stars)
         for idx in level:
             level[idx] = min(ents[idx].max_level, level[idx])
 
-        # 나침반 체인: 해당 칸 아래로 연속된 나침반 mult 합
+        # Compass chain: sum multipliers from consecutive compasses below the cell
         def compass_mult(cell: Cell) -> float:
             r, c = cell
             total, rr = 0.0, r + 1
@@ -195,7 +197,7 @@ def build_evaluator(combo_table: dict[str, list[tuple[int, float]]]):
                     break
             return total
 
-        # 3) 활성 아이템 가치 + 콤보 카운트
+        # 3) Active item value + combo counts
         total = 0.0
         active_tags: dict[str, int] = {}
         for idx, cell in p.idx_to_cell.items():
@@ -215,7 +217,7 @@ def build_evaluator(combo_table: dict[str, list[tuple[int, float]]]):
             for t in e.tags:
                 active_tags[t] = active_tags.get(t, 0) + 1
 
-        # 4) 콤보 보너스
+        # 4) Combo bonuses
         for tag, tiers in combo_table.items():
             cnt = active_tags.get(tag, 0)
             for thr, bonus in tiers:
@@ -226,35 +228,35 @@ def build_evaluator(combo_table: dict[str, list[tuple[int, float]]]):
     return evaluate
 
 
-# ────────────────────────── 엔진 1: 시뮬레이티드 어닐링 ──────────────────────────
+# ────────────────────────── Engine 1: simulated annealing ──────────────────────────
 def simulated_annealing(board, entities, evaluate, *,
                         iters=20000, t0=5.0, tmin=1e-3,
                         restarts=8, seed=None, verbose=False):
     cells = board.cells()
     n = len(entities)
     if n > len(cells):
-        raise ValueError(f"엔티티 {n}개 > 칸 {len(cells)}개")
+        raise ValueError(f"Entities {n} > cells {len(cells)}")
     rng = random.Random(seed)
     best_snap, best_score = None, float("-inf")
 
     for run in range(restarts):
         p = Placement(board, entities)
-        for idx, cell in enumerate(rng.sample(cells, n)):  # 무작위 초기 배치
+        for idx, cell in enumerate(rng.sample(cells, n)):  # Random initial placement
             p.put(idx, cell)
         cur = evaluate(p)
 
         for it in range(iters):
-            T = max(tmin, t0 * (tmin / t0) ** (it / iters))  # 기하 냉각
-            a = rng.choice(list(p.cell_to_idx.keys()))       # 점유 칸
-            b = rng.choice(cells)                            # 임의 대상 칸
+            T = max(tmin, t0 * (tmin / t0) ** (it / iters))  # Geometric cooling
+            a = rng.choice(list(p.cell_to_idx.keys()))       # Occupied cell
+            b = rng.choice(cells)                            # Random target cell
             if a == b:
                 continue
             snap = p.snapshot()
             ia, ib = p.cell_to_idx.get(a), p.cell_to_idx.get(b)
-            if ib is None:                                   # 빈 칸으로 이동
+            if ib is None:                                   # Move to an empty cell
                 p.clear_cell(a)
                 p.put(ia, b)
-            else:                                            # 두 칸 교환
+            else:                                            # Swap two cells
                 p.put(ia, b)
                 p.put(ib, a)
             new = evaluate(p)
@@ -275,9 +277,9 @@ def simulated_annealing(board, entities, evaluate, *,
     return best, best_score
 
 
-# ────────────────────────── 엔진 2: 완전탐색 (검증용) ──────────────────────────
+# ────────────────────────── Engine 2: brute force (validation) ──────────────────────────
 def brute_force(board, entities, evaluate):
-    """작은 보드 전용. 칸을 골라 엔티티를 모든 순열로 배치."""
+    """For small boards only: place entities in every permutation of cells."""
     cells = board.cells()
     n = len(entities)
     best_snap, best_score = None, float("-inf")
@@ -293,66 +295,66 @@ def brute_force(board, entities, evaluate):
     return best, best_score
 
 
-# ────────────────────────── 데모 / 검증 ──────────────────────────
+# ────────────────────────── Demo / validation ──────────────────────────
 if __name__ == "__main__":
-    # 콤보표: '화염' 아이템 2개부터 +5, 4개부터 추가 +10
-    combo_table = {"화염": [(2, 5.0), (4, 10.0)], "정밀": [(2, 4.0)]}
+    # Combo table: +5 with two Fire items, then another +10 with four
+    combo_table = {"Fire": [(2, 5.0), (4, 10.0)], "Precision": [(2, 4.0)]}
     evaluate = build_evaluator(combo_table)
 
     top_row_bonus = lambda cell, b: 3.0 if cell[0] == 0 else 0.0
 
-    # ── 작은 보드(3x3): SA vs 완전탐색 정합성 검증 ──
+    # ── Small board (3x3): validate SA against brute force ──
     small = Board(3, 3)
     ents_small: list[Entity] = [
-        Item("불검", base_value=4, per_level=3, max_level=3,
-             tags=frozenset({"화염"}), is_attack=True, pos_bonus=top_row_bonus),
-        Item("불부적", base_value=3, per_level=2, max_level=3, tags=frozenset({"화염"})),
-        Item("정밀석", base_value=2, per_level=2, max_level=3, tags=frozenset({"정밀"})),
-        Item("정밀활", base_value=3, per_level=2, max_level=3,
-             tags=frozenset({"정밀", "화염"}), is_attack=True),
-        Tablet("기반", delta=+1, region=row_region),   # 같은 줄 레벨 +1
-        Compass("나침반", mult=0.5),                    # 위 칸 공격형 +50%
+        Item("Fire Sword", base_value=4, per_level=3, max_level=3,
+             tags=frozenset({"Fire"}), is_attack=True, pos_bonus=top_row_bonus),
+        Item("Fire Charm", base_value=3, per_level=2, max_level=3, tags=frozenset({"Fire"})),
+        Item("Precision Stone", base_value=2, per_level=2, max_level=3, tags=frozenset({"Precision"})),
+        Item("Precision Bow", base_value=3, per_level=2, max_level=3,
+             tags=frozenset({"Precision", "Fire"}), is_attack=True),
+        Tablet("Foundation", delta=+1, region=row_region),  # +1 level in the same row
+        Compass("Compass", mult=0.5),                       # +50% to attack item above
     ]
     bf_p, bf_s = brute_force(small, ents_small, evaluate)
     sa_p, sa_s = simulated_annealing(small, ents_small, evaluate,
                                      iters=4000, restarts=20, seed=1)
-    print("=== 3x3 검증 ===")
-    print(f"완전탐색 최적값 : {bf_s:.2f}")
-    print(f"SA      최적값 : {sa_s:.2f}")
-    print("정합성 :", "일치 ✅" if abs(bf_s - sa_s) < 1e-6 else "불일치 ❌")
-    print("\n[SA 최적 배치]")
+    print("=== 3x3 Validation ===")
+    print(f"Brute-force optimum: {bf_s:.2f}")
+    print(f"SA          optimum: {sa_s:.2f}")
+    print("Consistency:", "MATCH ✅" if abs(bf_s - sa_s) < 1e-6 else "MISMATCH ❌")
+    print("\n[SA Optimal Placement]")
     print(sa_p.pretty())
 
-    # ── 실전 규모(5x6 = 30칸): SA만 ──
-    print("\n=== 5x6(30칸) 실전 규모 ===")
+    # ── Practical scale (5x6 = 30 cells): SA only ──
+    print("\n=== 5x6 (30 cells) Practical Scale ===")
     big = Board(5, 6)
     rng = random.Random(42)
     big_ents: list[Entity] = []
-    fire = ["불꽃반지", "용의숨결", "잉걸불", "메테오", "화염병"]
-    prec = ["조준경", "저격석", "급소노리개", "정밀톱니"]
+    fire = ["Flame Ring", "Dragon's Breath", "Ember", "Meteor", "Firebomb"]
+    prec = ["Scope", "Sniper Stone", "Weak-Point Charm", "Precision Gear"]
     for nm in fire:
         big_ents.append(Item(nm, base_value=rng.uniform(2, 5),
                              per_level=rng.uniform(1, 3), max_level=rng.randint(2, 4),
-                             tags=frozenset({"화염"}), is_attack=bool(rng.getrandbits(1))))
+                             tags=frozenset({"Fire"}), is_attack=bool(rng.getrandbits(1))))
     for nm in prec:
         big_ents.append(Item(nm, base_value=rng.uniform(2, 5),
                              per_level=rng.uniform(1, 3), max_level=rng.randint(2, 4),
-                             tags=frozenset({"정밀"}), is_attack=bool(rng.getrandbits(1))))
-    for i in range(8):  # 잡다 아이템
-        big_ents.append(Item(f"아이템{i}", base_value=rng.uniform(1, 4),
+                             tags=frozenset({"Precision"}), is_attack=bool(rng.getrandbits(1))))
+    for i in range(8):  # Miscellaneous items
+        big_ents.append(Item(f"Item{i}", base_value=rng.uniform(1, 4),
                              per_level=rng.uniform(0.5, 2), max_level=rng.randint(2, 4)))
-    big_ents += [Tablet("기반A", +1, row_region), Tablet("기반B", +1, row_region),
-                 Tablet("기둥", +1, col_region), Tablet("저주", -2, edge_region),
-                 Compass("나침반1", 0.5), Compass("나침반2", 0.5)]
+    big_ents += [Tablet("Foundation A", +1, row_region), Tablet("Foundation B", +1, row_region),
+                 Tablet("Pillar", +1, col_region), Tablet("Curse", -2, edge_region),
+                 Compass("Compass 1", 0.5), Compass("Compass 2", 0.5)]
 
-    big_combo = {"화염": [(2, 6.0), (3, 8.0), (5, 12.0)],
-                 "정밀": [(2, 5.0), (4, 10.0)]}
+    big_combo = {"Fire": [(2, 6.0), (3, 8.0), (5, 12.0)],
+                 "Precision": [(2, 5.0), (4, 10.0)]}
     big_eval = build_evaluator(big_combo)
 
     import time
     t = time.time()
     bp, bs = simulated_annealing(big, big_ents, big_eval,
                                  iters=30000, restarts=10, seed=7, verbose=True)
-    print(f"\n최종 점수 : {bs:.2f}  (소요 {time.time() - t:.2f}s)")
-    print("\n[최적 배치]")
+    print(f"\nFinal score: {bs:.2f}  (elapsed {time.time() - t:.2f}s)")
+    print("\n[Optimal Placement]")
     print(bp.pretty())

@@ -1,16 +1,19 @@
 """
-세피리아 인벤토리 상태 수집기 (자동 호버-스캔)
+Sephiria Inventory State Collector (Automated Hover Scan)
 ================================================
-한 장의 스크린샷으로는 못 얻는 '아이템별 현재 별/레벨'을,
-각 칸을 자동으로 호버해 툴팁을 캡쳐·파싱하여
-sephiria_solver.py 가 먹는 entities 리스트로 변환한다.
+Obtains each item's current star/level, which cannot be determined from a
+single screenshot, by automatically hovering over every cell and capturing
+and parsing its tooltip, then converts the result into the entity list
+consumed by sephiria_solver.py.
 
-설계 원칙: 정적 데이터(이름/태그/상한 등)는 ITEM_DB에서 1회 조회,
-          매판 바뀌는 동적 데이터(현재 별/레벨)만 실시간으로 읽는다.
+Design principle: query static data (name/tags/cap, etc.) from ITEM_DB once,
+                  and read only dynamic data that changes each run
+                  (current star/level) in real time.
 
-의존: pip install mss pyautogui opencv-python numpy
-     (텍스트 OCR 폴백 쓰려면) pip install pytesseract  +  Tesseract(kor) 설치
-환경: Windows/창모드 고정 해상도 권장 (좌표·템플릿 크기 안정화)
+Dependencies: pip install mss pyautogui opencv-python numpy
+     (For the text OCR fallback) pip install pytesseract + install Tesseract(kor)
+Environment: Windows/fixed-resolution windowed mode recommended
+             (keeps coordinates and template sizes stable)
 """
 from __future__ import annotations
 import time, json, base64
@@ -19,25 +22,25 @@ import cv2
 import mss
 import pyautogui
 
-# ────────── 1) 캘리브레이션 (환경에 맞게 1회 설정) ──────────
+# ────────── 1) Calibration (configure once for the environment) ──────────
 GRID_ROWS, GRID_COLS = 5, 6
-TOP_LEFT  = (760, 300)    # TODO: 좌상단 '첫 칸'의 화면상 중심 좌표
-BOT_RIGHT = (1180, 620)   # TODO: 우하단 '마지막 칸'의 중심 좌표
-CELL_SIZE = 84            # TODO: 한 칸 픽셀 크기(점유 판정/아이콘 매칭용)
+TOP_LEFT  = (760, 300)    # TODO: screen center of the top-left "first cell"
+BOT_RIGHT = (1180, 620)   # TODO: screen center of the bottom-right "last cell"
+CELL_SIZE = 84            # TODO: cell size in pixels (occupancy/icon matching)
 
-HOVER_DWELL = 0.25        # 툴팁 렌더 대기(초). 애니메이션 길면 늘릴 것
-TOOLTIP_OFFSET = (20, 20) # 커서 기준 툴팁 패널이 뜨는 대략 위치 오프셋
-TOOLTIP_SIZE   = (320, 260)  # 캡쳐할 툴팁 영역 크기(넉넉히)
-STAR_ROI = (12, 40, 200, 28)  # TODO: 툴팁 내 '별 줄'의 (x,y,w,h)
+HOVER_DWELL = 0.25        # Tooltip render delay (seconds); increase for long animations
+TOOLTIP_OFFSET = (20, 20) # Approximate tooltip-panel offset from the cursor
+TOOLTIP_SIZE   = (320, 260)  # Generous tooltip capture area
+STAR_ROI = (12, 40, 200, 28)  # TODO: (x,y,w,h) of the tooltip's "star row"
 
-# 채워진 별 색(HSV) 임계 — 금색 별 기준 예시. TODO: 실제 색으로 보정
+# Filled-star color (HSV) threshold, using a gold star as an example. TODO: calibrate
 STAR_FILLED_LO = np.array([18, 120, 120])
 STAR_FILLED_HI = np.array([35, 255, 255])
 
-EMPTY_DIFF_THRESH = 12.0  # 빈 칸 대비 평균 차이 > 이 값이면 '점유'
+EMPTY_DIFF_THRESH = 12.0  # Mean difference from an empty cell above this means "occupied"
 
 
-# ────────── 2) 좌표/캡쳐 유틸 ──────────
+# ────────── 2) Coordinate/capture utilities ──────────
 def cell_centers() -> list[list[tuple[int, int]]]:
     (x1, y1), (x2, y2) = TOP_LEFT, BOT_RIGHT
     xs = np.linspace(x1, x2, GRID_COLS)
@@ -57,7 +60,7 @@ def cell_crop(center: tuple[int, int]) -> np.ndarray:
     return grab((x - half, y - half, CELL_SIZE, CELL_SIZE))
 
 
-# ────────── 3) 점유 칸 감지 (빈 칸만 건너뛰기) ──────────
+# ────────── 3) Occupied-cell detection (skip empty cells) ──────────
 def occupancy_map(empty_ref: np.ndarray) -> dict[tuple[int, int], bool]:
     occ = {}
     for r, row in enumerate(cell_centers()):
@@ -67,7 +70,7 @@ def occupancy_map(empty_ref: np.ndarray) -> dict[tuple[int, int], bool]:
     return occ
 
 
-# ────────── 4) 별(현재 레벨) 카운팅 — OCR보다 정확 ──────────
+# ────────── 4) Star (current-level) counting — more accurate than OCR ──────────
 def count_stars(tooltip_bgr: np.ndarray) -> int:
     x, y, w, h = STAR_ROI
     crop = tooltip_bgr[y:y + h, x:x + w]
@@ -75,19 +78,19 @@ def count_stars(tooltip_bgr: np.ndarray) -> int:
     mask = cv2.inRange(hsv, STAR_FILLED_LO, STAR_FILLED_HI)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
     n_labels, _, stats, _ = cv2.connectedComponentsWithStats(mask)
-    # 노이즈 제거: 일정 면적 이상만 별로 카운트
+    # Remove noise: count only components above a minimum area as stars
     return sum(1 for i in range(1, n_labels) if stats[i, cv2.CC_STAT_AREA] > 30)
 
 
-# ────────── 5) 아이템 정체 식별 — 아이콘 템플릿 매칭 ──────────
-# ITEM_DB: 1회 구축. icon_path → 정적 스펙
-#   {"불의 검": {"tags": ["화염"], "is_attack": True,
+# ────────── 5) Item identification — icon template matching ──────────
+# ITEM_DB: build once. icon_path → static specification
+#   {"Fire Sword": {"tags": ["Fire"], "is_attack": True,
 #                "max_level": 4, "constraint": "needs_empty_lr",
 #                "template": "icons/sword_fire.png"}}
-ITEM_DB: dict[str, dict] = {}  # TODO: 실제 게임 데이터로 채우기
+ITEM_DB: dict[str, dict] = {}  # TODO: populate with actual game data
 
 def identify_icon(cell_img: np.ndarray) -> str | None:
-    """셀 아이콘을 ITEM_DB 템플릿과 매칭해 이름 반환."""
+    """Match a cell icon against ITEM_DB templates and return its name."""
     best_name, best_score = None, 0.0
     for name, spec in ITEM_DB.items():
         tmpl = spec.get("_tmpl")
@@ -100,13 +103,14 @@ def identify_icon(cell_img: np.ndarray) -> str | None:
         score = float(res.max())
         if score > best_score:
             best_name, best_score = name, score
-    return best_name if best_score > 0.7 else None  # 임계값은 보정
+    return best_name if best_score > 0.7 else None  # Calibrate the threshold
 
 
-# ────────── 6) (선택) 텍스트 파싱 — VLM 권장 / Tesseract 폴백 ──────────
+# ────────── 6) Optional text parsing — VLM recommended / Tesseract fallback ──────────
 def parse_tooltip_vlm(tooltip_bgr: np.ndarray) -> dict:
-    """Claude vision으로 툴팁에서 구조화 JSON 추출 (이름/레벨/태그/제약).
-    아이콘 DB가 불완전하거나 처음 DB를 구축할 때 사용."""
+    """Extract structured JSON (name/level/tags/constraint) from a tooltip
+    with Claude vision. Use this when the icon DB is incomplete or while
+    building it for the first time."""
     import anthropic
     ok, buf = cv2.imencode(".png", tooltip_bgr)
     b64 = base64.b64encode(buf).decode()
@@ -118,9 +122,9 @@ def parse_tooltip_vlm(tooltip_bgr: np.ndarray) -> dict:
             {"type": "image", "source": {"type": "base64",
              "media_type": "image/png", "data": b64}},
             {"type": "text", "text":
-             "이 게임 툴팁에서 다음을 JSON으로만 추출해라(설명 금지): "
-             '{"name":..., "level":현재레벨(int), "max_level":최대별(int), '
-             '"tags":[...], "constraint":제약설명 or null}'}
+             "Extract only the following JSON from this game tooltip (no explanation): "
+             '{"name":..., "level":current_level(int), "max_level":max_stars(int), '
+             '"tags":[...], "constraint":constraint_description or null}'}
         ]}],
     )
     txt = "".join(b.text for b in msg.content if b.type == "text")
@@ -129,12 +133,12 @@ def parse_tooltip_vlm(tooltip_bgr: np.ndarray) -> dict:
 def parse_tooltip_ocr(tooltip_bgr: np.ndarray) -> dict:
     import pytesseract
     txt = pytesseract.image_to_string(tooltip_bgr, lang="kor+eng")
-    return {"raw_text": txt}  # TODO: 정규식으로 필드 추출
+    return {"raw_text": txt}  # TODO: extract fields with regular expressions
 
 
-# ────────── 7) 메인 스캔 루프 ──────────
+# ────────── 7) Main scan loop ──────────
 def scan_inventory(empty_ref: np.ndarray, use_vlm: bool = False) -> dict:
-    """점유된 칸만 호버·캡쳐해서 칸별 상태 dict 반환."""
+    """Hover over and capture occupied cells, returning state by cell."""
     centers = cell_centers()
     occ = occupancy_map(empty_ref)
     results: dict[tuple[int, int], dict] = {}
@@ -143,33 +147,34 @@ def scan_inventory(empty_ref: np.ndarray, use_vlm: bool = False) -> dict:
         if not occupied:
             continue
         x, y = centers[r][c]
-        icon = cell_crop((x, y))            # 호버 전에 아이콘부터 확보
+        icon = cell_crop((x, y))            # Capture the icon before hovering
         pyautogui.moveTo(x, y)
-        time.sleep(HOVER_DWELL)             # 툴팁 대기
+        time.sleep(HOVER_DWELL)             # Wait for the tooltip
         tx = x + TOOLTIP_OFFSET[0]
         ty = y + TOOLTIP_OFFSET[1]
-        tip = grab((tx, ty, *TOOLTIP_SIZE)) # 툴팁 패널 캡쳐
+        tip = grab((tx, ty, *TOOLTIP_SIZE)) # Capture the tooltip panel
 
         if use_vlm:
-            data = parse_tooltip_vlm(tip)   # 텍스트까지 VLM으로
+            data = parse_tooltip_vlm(tip)   # Use the VLM for text too
         else:
-            name = identify_icon(icon)      # 정체는 아이콘 매칭
+            name = identify_icon(icon)      # Identify via icon matching
             spec = ITEM_DB.get(name, {})
-            data = {"name": name, **spec}   # 정적 스펙 병합
-        data["level"] = count_stars(tip)    # 동적: 현재 별은 항상 픽셀로
+            data = {"name": name, **spec}   # Merge the static specification
+        data["level"] = count_stars(tip)    # Dynamic: always read current stars from pixels
         results[(r, c)] = data
 
-    pyautogui.moveTo(10, 10)                # 마지막에 커서 비우기
+    pyautogui.moveTo(10, 10)                # Move the cursor away when done
     return results
 
 
-# ────────── 8) solver entities 로 변환 ──────────
+# ────────── 8) Convert to solver entities ──────────
 def to_solver_entities(scan_result: dict):
-    """scan 결과 → sephiria_solver 의 Item/Tablet/Compass 리스트.
-    (정적 스펙의 type 필드로 분기. 여기선 Item만 예시)"""
+    """Convert scan results to a list of sephiria_solver Item/Tablet/Compass
+    instances. Dispatch on the static specification's type field; only Item
+    is shown here as an example."""
     from sephiria_solver import Item
     entities, placement = [], {}
-    constraint_lut = {  # 문자열 → solver 제약 함수
+    constraint_lut = {  # String → solver constraint function
         # "needs_empty_lr": needs_empty_lr, "not_on_edge": not_on_edge,
     }
     for cell, d in scan_result.items():
@@ -180,20 +185,20 @@ def to_solver_entities(scan_result: dict):
             base_value=d.get("base_value", 1.0),
             per_level=d.get("per_level", 1.0),
             max_level=d.get("max_level", 3),
-            enchant_level=d.get("level", 0),  # 현재 별을 시작 레벨로
+            enchant_level=d.get("level", 0),  # Use current stars as the starting level
             tags=frozenset(d.get("tags", [])),
             is_attack=d.get("is_attack", False),
             constraint=constraint_lut.get(d.get("constraint")),
         ))
-        placement[cell] = len(entities) - 1   # 현재 위치 → SA 웜스타트용
+        placement[cell] = len(entities) - 1   # Current position for an SA warm start
     return entities, placement
 
 
 if __name__ == "__main__":
-    # 사용 순서:
-    #  1) 인벤토리의 '확실히 빈 칸' 하나를 캡쳐해 empty_ref 로 저장
-    #     empty_ref = cell_crop((빈칸_x, 빈칸_y))
+    # Usage:
+    #  1) Capture one definitely empty inventory cell and save it as empty_ref
+    #     empty_ref = cell_crop((empty_cell_x, empty_cell_y))
     #  2) result = scan_inventory(empty_ref, use_vlm=False)
     #  3) entities, placement = to_solver_entities(result)
-    #  4) sephiria_solver.simulated_annealing(...) 에 투입
-    print("환경 좌표/색 임계값(TODO)을 보정한 뒤 위 순서대로 호출하세요.")
+    #  4) Pass them to sephiria_solver.simulated_annealing(...)
+    print("Calibrate the environment coordinates/color thresholds (TODO), then follow the steps above.")
